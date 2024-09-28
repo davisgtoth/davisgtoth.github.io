@@ -4,61 +4,144 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Davis Toth Portfolio</title>
+    <title>Davis Toth Project Portfolio</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            text-align: center;
             margin: 0;
             padding: 0;
-            height: 100vh;
+        }
+
+        .header {
             display: flex;
-            justify-content: center;
+            justify-content: space-between;
             align-items: center;
-            background-color: #f0f0f0;
-            flex-direction: column;
+            background-color: #bfb8b8;
+            padding: 20px;
         }
 
-        h1 {
-            color: #333;
-            font-size: 2.5em;
+        .header .title {
+            font-size: 24px;
+            font-weight: bold;
         }
 
-        img {
-            width: 175px;
-            height: auto;
+        .header .links {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            /* Ensures vertical alignment */
         }
 
-        .resume-button {
-            margin-top: 40px;
-            padding: 10px 20px;
-            font-size: 1em;
-            cursor: pointer;
-            background-color: #88898b;
-            /* Background color */
+        /* Resume button styling with adjusted padding */
+        .header .links a:first-child {
+            background-color: #303132;
             color: white;
-            /* Text color */
-            border: none;
-            /* No border */
+            padding: 8px 16px;
+            /* Adjust the padding to make the button more compact */
             border-radius: 5px;
-            /* Rounded corners */
-            transition: background-color 0.3s;
-            /* Smooth transition for hover effect */
+            text-decoration: none;
+            font-size: 16px;
+            display: inline-block;
+            /* height: auto; */
+            /* Remove fixed height */
+            line-height: normal;
+            /* Remove fixed line height */
         }
 
-        .resume-button:hover {
-            background-color: #3e4041;
-            /* Darker background on hover */
+        /* LinkedIn and GitHub icons styled to match Resume button size */
+        .header .links a img {
+            width: 34px;
+            /* Same height as Resume button */
+            height: 34px;
+            display: inline-block;
+            object-fit: contain;
+            /* Ensures icons maintain aspect ratio */
+            background-color: transparent;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .grid-item {
+            background-color: #e0e0e0;
+            padding: 20px;
+            text-align: center;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .grid-item:hover {
+            background-color: #c2c2c2;
+        }
+
+        /* Under construction message styling */
+        .construction-message {
+            text-align: center;
+            margin: 40px 0;
+            /* Adds space above and below the message */
+            font-size: 32px;
+            /* Adjust font size as needed */
+            color: #303132;
+            /* Adjust color as needed */
+            font-weight: bold;
         }
     </style>
 </head>
 
 <body>
-    <h1>This page is under construction</h1>
-    <img src="construction.png" alt="Under Construction">
-    <a href="resume.html">
-        <button class="resume-button">View My Resume</button>
-    </a>
+
+    <div class="header">
+        <div class="title">Davis Toth Project Portfolio</div>
+        <div class="links">
+            <a href="resume.pdf" target="_blank">Resume</a>
+            <a href="https://www.linkedin.com/in/davis-toth" target="_blank">
+                <img src="linkedin_icon.png" alt="LinkedIn" width="24" height="24">
+            </a>
+            <a href="https://github.com/davisgtoth" target="_blank">
+                <img src="github_icon.png" alt="GitHub" width="24" height="24">
+            </a>
+            <a href="mailto:davisgtoth@gmail.com">
+                <img src="email_icon.png" alt="Email" title="Email Davis Toth">
+            </a>
+        </div>
+    </div>
+
+    <div class="grid-container">
+        <div class="grid-item">
+            <h3>Project #1</h3>
+            <img src="construction/construction.png" alt="Project 1" width="100" height="100">
+        </div>
+        <div class="grid-item">
+            <h3>Project #2</h3>
+            <img src="construction/construction.png" alt="Project 2" width="100" height="100">
+        </div>
+        <div class="grid-item">
+            <h3>Project #3</h3>
+            <img src="construction/construction.png" alt="Project 3" width="100" height="100">
+        </div>
+        <div class="grid-item">
+            <h3>Project #4</h3>
+            <img src="construction/construction.png" alt="Project 4" width="100" height="100">
+        </div>
+        <div class="grid-item">
+            <h3>Project #5</h3>
+            <img src="construction/construction.png" alt="Project 5" width="100" height="100">
+        </div>
+        <div class="grid-item">
+            <h3>Project #6</h3>
+            <img src="construction/construction.png" alt="Project 6" width="100" height="100">
+        </div>
+    </div>
+
+    <div class="construction-message">
+        This page is under construction
+    </div>
+
 </body>
 
 </html>
