@@ -125,6 +125,14 @@ body {
     color: #4b92f6;
 }
 
+#table-of-contents a {
+    color: #ffffff;
+}
+
+#table-of-contents a:hover {
+    color: #afaeae;
+}
+
 .spacer {
     height: 400px;
     /* Add blank space after each section */
