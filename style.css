@@ -105,8 +105,8 @@ body {
 .content-section p {
     margin-left: 20px;
     font-size: 0.7em;
-    margin-bottom: 0;
-    padding-bottom: 0;
+    margin-bottom: 5px;
+    padding-bottom: 5px;
     margin-top: 5px;
 }
 
@@ -140,4 +140,17 @@ body {
 
 html {
     scroll-behavior: smooth;
+}
+
+p.image-container {
+    text-align: center;
+}
+
+p.image-container img {
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 30%;
+    height: auto;
+    margin-bottom: 5px;
 }
