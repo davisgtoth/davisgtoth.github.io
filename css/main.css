@@ -6,74 +6,12 @@ body {
     height: 200vh;
 }
 
-/* Terminal text styles */
-.terminal-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-}
-
-.terminal {
-    font-size: 2.5em;
-}
-
-/* Cursor blinking animation */
-.cursor {
-    display: inline-block;
-    background-color: #ffffff;
-    animation: blink 1s step-end infinite;
-}
-
-@keyframes blink {
-    50% {
-        opacity: 0;
-    }
-}
-
 * {
     box-sizing: border-box;
 }
 
-/* Navbar styles */
-.navbar {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    background-color: #000000;
-    color: white;
-    padding: 10px 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-family: 'Courier New', Courier, monospace;
-    font-size: 1.2em;
-    z-index: 1000;
-    opacity: 0;
-    transform: translateY(-100%);
-    transition: all 0.6s ease;
-}
-
-.navbar.visible {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-.nav-left p {
-    margin: 5px;
-    font-size: 1.5em;
-    color: #ffffff;
-}
-
-.nav-right a {
-    color: white;
-    text-decoration: none;
-    margin-left: 20px;
-    font-size: 1.0em;
-}
-
-.nav-right a:hover {
-    color: #afaeae;
+html {
+    scroll-behavior: smooth;
 }
 
 .content-section {
@@ -102,12 +40,16 @@ body {
     margin-bottom: 20px
 }
 
+/* #projects {
+    position: relative;
+} */
+
 .content-section p {
     margin-left: 20px;
     font-size: 0.7em;
     margin-bottom: 5px;
     padding-bottom: 5px;
-    margin-top: 5px;
+    margin-top: 10px;
 }
 
 .content-section a {
@@ -131,15 +73,6 @@ body {
 
 #table-of-contents a:hover {
     color: #afaeae;
-}
-
-.spacer {
-    height: 400px;
-    /* Add blank space after each section */
-}
-
-html {
-    scroll-behavior: smooth;
 }
 
 p.image-container {

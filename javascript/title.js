@@ -34,18 +34,3 @@ document.addEventListener("DOMContentLoaded", () => {
     document.getElementById('title').innerHTML = "> "; // Display "> " immediately
     setTimeout(flashCursor, flashDelay);  // Start flashing the cursor
 });
-
-// Show the navbar when the user scrolls
-window.addEventListener('scroll', () => {
-    const navbar = document.getElementById('navbar');
-    const terminalContainer = document.getElementById('terminalContainer');
-
-    if (window.scrollY > 100) { // Adjust when you want the navbar to appear
-        navbar.classList.add('visible');
-    } else {
-        navbar.classList.remove('visible');
-    }
-
-    // Adjust terminal container (optional for smooth transition)
-    terminalContainer.style.paddingTop = `${window.scrollY / 2}px`;
-});
