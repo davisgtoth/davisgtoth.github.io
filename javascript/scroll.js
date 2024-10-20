@@ -15,7 +15,7 @@ window.addEventListener('scroll', () => {
 
     // Apply smooth scrolling for projects and all content sections
     if (scrollY > 10) {
-        const offset = scrollY / 2; // Adjust this factor to control how fast it scrolls up
+        const offset = scrollY / 1.7; // Adjust this factor to control how fast it scrolls up
 
         // Move the projects section title faster
         projectsSection.style.transform = `translateY(-${offset}px)`;

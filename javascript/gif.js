@@ -26,9 +26,9 @@ const captionsArray = [
         "threshold for the sign in two ways, logical AND the results",
         "filter for the biggest contour",
         "filter for the biggest contour",
-        "find the corners, crop and perspective transform to get the sign",
-        "find the corners, crop and perspective transform to get the sign",
-        "find the corners, crop and perspective transform to get the sign",
+        "find the corners, crop and perspective transform",
+        "find the corners, crop and perspective transform",
+        "find the corners, crop and perspective transform",
     ],
 ];
 
