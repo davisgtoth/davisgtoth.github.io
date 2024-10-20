@@ -49,16 +49,30 @@ html {
     margin-bottom: 20px
 }
 
-/* #projects {
-    position: relative;
-} */
-
 .content-section p {
     margin-left: 20px;
     font-size: 0.7em;
     margin-bottom: 5px;
     padding-bottom: 5px;
     margin-top: 10px;
+}
+
+@media (max-width: 600px) {
+    .content-section {
+        font-size: 1.2em;
+    }
+
+    .content-section h2 {
+        font-size: 2.2em;
+    }
+
+    .content-section h3 {
+        font-size: 1.8em;
+    }
+
+    .content-section p {
+        font-size: 1.0em;
+    }
 }
 
 .content-section a {

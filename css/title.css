@@ -1,29 +1,4 @@
 /* Terminal text styles */
-/* .terminal-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-}
-
-.terminal {
-    font-size: 2.5em;
-} */
-
-/* Cursor blinking animation */
-/* .cursor {
-    display: inline-block;
-    background-color: #ffffff;
-    animation: blink 1s step-end infinite;
-}
-
-@keyframes blink {
-    50% {
-        opacity: 0;
-    }
-} */
-
-/* Terminal text styles */
 .terminal-container {
     display: flex;
     justify-content: center;
