@@ -1,5 +1,5 @@
 /* Terminal text styles */
-.terminal-container {
+/* .terminal-container {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -8,6 +8,45 @@
 
 .terminal {
     font-size: 2.5em;
+} */
+
+/* Cursor blinking animation */
+/* .cursor {
+    display: inline-block;
+    background-color: #ffffff;
+    animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+    50% {
+        opacity: 0;
+    }
+} */
+
+/* Terminal text styles */
+.terminal-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+    /* Center the text horizontally */
+    word-break: break-all;
+    /* Allow long words to break */
+    word-wrap: break-word;
+    /* Allow wrapping */
+}
+
+.terminal {
+    font-size: 2.5em;
+}
+
+/* Adjust for smaller screens */
+@media (max-width: 600px) {
+    .terminal {
+        font-size: 1.5em;
+        /* Reduce the font size on small screens */
+    }
 }
 
 /* Cursor blinking animation */
