@@ -1,6 +1,6 @@
 const text = "cd davis_toth_portfolio";  // The text to type after cursor flashes
 // const text = "davis toth portfolio";
-const typingSpeed = 150;
+const typingSpeed = 125;
 let index = 0;
 let flashCount = 0;
 const flashLimit = 2; // Cursor will flash 3 times (on/off each flash counts as 2)
