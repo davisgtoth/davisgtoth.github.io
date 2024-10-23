@@ -46,7 +46,8 @@ html {
     font-size: 1.8em;
     font-weight: normal;
     margin-left: 10px;
-    margin-bottom: 20px
+    margin-bottom: 20px;
+    padding-top: 40px;
 }
 
 .content-section p {
@@ -159,10 +160,53 @@ html {
     height: 10px;
 }
 
-
 p.footnote {
     text-align: center;
     font-size: 0.4em;
     margin-bottom: 0;
     padding-bottom: 0;
+}
+
+.clock-gif {
+    width: 100%;
+    height: auto;
+    max-width: 800px;
+    /* display: block;
+    margin: 0 auto; */
+    margin-left: 20px;
+    /* margin-bottom: 20px;
+    padding-bottom: 10px; */
+}
+
+/* .command {
+    cursor: pointer;
+    display: inline-block;
+}
+
+.command:hover {
+    color: #afaeae;
+} */
+
+/* .command::after {
+    content: "\00A0";
+    display: inline-block;
+    width: 0.6em;
+    height: 0.9em;
+    background-color: #ffffff;
+    vertical-align: middle;
+} */
+
+/* .hidden-content {
+    display: none;
+} */
+
+.video-container {
+    text-align: center;
+}
+
+.clock-video {
+    width: 100%;
+    height: auto;
+    max-width: 800px;
+    margin-bottom: 0;
 }
