@@ -143,6 +143,9 @@ html {
     font-size: 0.6em;
     margin-top: 0px;
     color: #ffffff;
+    /* display: inline-block;
+    margin-left: auto;
+    margin-right: auto; */
 }
 
 .horizontal-line {
@@ -171,34 +174,48 @@ p.footnote {
     width: 100%;
     height: auto;
     max-width: 800px;
-    /* display: block;
-    margin: 0 auto; */
-    margin-left: 20px;
-    /* margin-bottom: 20px;
-    padding-bottom: 10px; */
+    display: block;
+    margin: 0 auto;
+    /* margin-left: 20px; */
+    margin-bottom: 20px;
+    padding-bottom: 10px;
 }
 
-/* .command {
+.command {
     cursor: pointer;
     display: inline-block;
 }
 
 .command:hover {
     color: #afaeae;
-} */
+}
 
-/* .command::after {
+.command::after {
     content: "\00A0";
     display: inline-block;
     width: 0.6em;
     height: 0.9em;
     background-color: #ffffff;
     vertical-align: middle;
-} */
+    animation: blink 1.5s step-start infinite;
+}
 
-/* .hidden-content {
+@keyframes blink {
+
+    0%,
+    50% {
+        background-color: #ffffff;
+    }
+
+    51%,
+    100% {
+        background-color: transparent;
+    }
+}
+
+.hidden-content {
     display: none;
-} */
+}
 
 .video-container {
     text-align: center;
@@ -207,6 +224,7 @@ p.footnote {
 .clock-video {
     width: 100%;
     height: auto;
-    max-width: 800px;
-    margin-bottom: 0;
+    max-width: 600px;
+    /* margin-bottom: 0; */
+    margin: 0 20px;
 }
