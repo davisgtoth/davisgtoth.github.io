@@ -197,20 +197,6 @@ p.footnote {
     height: 0.9em;
     background-color: #ffffff;
     vertical-align: middle;
-    animation: blink 1.5s step-start infinite;
-}
-
-@keyframes blink {
-
-    0%,
-    50% {
-        background-color: #ffffff;
-    }
-
-    51%,
-    100% {
-        background-color: transparent;
-    }
 }
 
 .hidden-content {
