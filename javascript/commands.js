@@ -11,8 +11,10 @@ commandElements.forEach(command => {
         if (hiddenContent && hiddenContent.classList.contains('hidden-content')) {
             if (hiddenContent.style.display === 'none' || hiddenContent.style.display === '') {
                 hiddenContent.style.display = 'block';
+                this.classList.add('active'); // Add active class to stop blinking and hide cursor
             } else {
                 hiddenContent.style.display = 'none';
+                this.classList.remove('active'); // Remove active class to start blinking and show cursor
             }
         }
     });

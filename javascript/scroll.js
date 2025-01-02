@@ -37,4 +37,26 @@ window.addEventListener('scroll', () => {
         // Reset terminal container padding
         terminalContainer.style.paddingTop = '0';
     }
+
+    // Add event listeners to anchor links
+    const anchorLinks = document.querySelectorAll('.anchor-link');
+    anchorLinks.forEach(link => {
+        link.addEventListener('click', (event) => {
+            event.preventDefault();
+
+            // Hide any visible command content
+            const visibleCommands = document.querySelectorAll('.hidden-content');
+            visibleCommands.forEach(command => {
+                command.style.display = 'none';
+                const commandElement = command.previousElementSibling;
+                if (commandElement && commandElement.classList.contains('command')) {
+                    commandElement.classList.remove('active'); // Show cursor
+                }
+            });
+
+            // Scroll to the specified y value
+            const yValue = parseInt(link.getAttribute('data-y'), 10);
+            window.scrollTo({ top: yValue, behavior: 'smooth' });
+        });
+    });
 });
