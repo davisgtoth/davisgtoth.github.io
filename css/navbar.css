@@ -81,3 +81,13 @@
 .dropdown:hover .dropdown-content {
     display: block;
 }
+
+@media (max-width: 600px) {
+    .nav-left p {
+        font-size: 1.2em;
+    }
+
+    .nav-right a {
+        font-size: 0.9em;
+    }
+}
