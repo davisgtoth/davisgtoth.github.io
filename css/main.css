@@ -14,13 +14,16 @@ html {
     scroll-behavior: smooth;
 }
 
-#about,
 #projects,
-#mario-robot,
+#about {
+    scroll-margin-top: 70px;
+}
+
+#mario-kart-robot,
 #detective-robot,
 #assembly-clock,
 #ac-ionic-thruster {
-    scroll-margin-top: 70px;
+    scroll-margin-top: 30px;
 }
 
 .content-section {
