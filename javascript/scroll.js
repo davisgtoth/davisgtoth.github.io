@@ -7,10 +7,16 @@ window.addEventListener('scroll', () => {
     const scrollY = window.scrollY;
 
     // Show the navbar after scrolling a bit
-    if (scrollY > 30) {
+    if (scrollY > 60) {
         navbar.classList.add('visible');
+        contentSections.forEach(section => {
+            section.classList.add('visible');
+        });
     } else {
         navbar.classList.remove('visible');
+        contentSections.forEach(section => {
+            section.classList.remove('visible');
+        });
     }
 
     // // Apply smooth scrolling for projects and all content sections
