@@ -266,7 +266,12 @@ p.footnote {
     margin: 20px 0;
 }
 
-.gif-container .gif {
+.gif-container .gif-253 {
     width: 30%;
+    height: auto;
+}
+
+.gif-container .gif-353 {
+    width: 40%;
     height: auto;
 }
