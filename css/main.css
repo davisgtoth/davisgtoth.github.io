@@ -236,3 +236,37 @@ p.footnote {
     /* margin-bottom: 0; */
     margin: 0 20px;
 }
+
+.project-link {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    margin-left: 20px;
+}
+
+.project-link a {
+    font-size: 0.7em;
+    text-decoration: none;
+    margin-right: 10px;
+}
+
+.project-link .tags {
+    font-size: 0.5em;
+    font-style: italic;
+    color: #808080;
+    /* margin: 0; */
+    margin-left: 10px;
+}
+
+.gif-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    margin: 20px 0;
+}
+
+.gif-container .gif {
+    width: 30%;
+    height: auto;
+}
