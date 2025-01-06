@@ -254,7 +254,6 @@ p.footnote {
     font-size: 0.5em;
     font-style: italic;
     color: #808080;
-    /* margin: 0; */
     margin-left: 10px;
 }
 
@@ -274,4 +273,18 @@ p.footnote {
 .gif-container .gif-353 {
     width: 40%;
     height: auto;
+}
+
+.pdf-container {
+    width: 100%;
+    max-width: 900px;
+    height: 600px;
+    margin: 10px auto;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.pdf-container iframe {
+    width: 100%;
+    height: 100%;
 }
