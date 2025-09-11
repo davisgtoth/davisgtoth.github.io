@@ -12,12 +12,17 @@
     font-family: 'Courier New', Courier, monospace;
     font-size: 1.2em;
     z-index: 1000;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+body.landing-page .navbar {
     opacity: 0;
     transform: translateY(-100%);
     transition: all 0.6s ease;
 }
 
-.navbar.visible {
+body.landing-page .navbar.visible {
     opacity: 1;
     transform: translateY(0);
 }
@@ -26,6 +31,11 @@
     margin: 5px;
     font-size: 1.5em;
     color: #ffffff;
+}
+
+.nav-left a {
+    color: inherit;
+    text-decoration: none;
 }
 
 .nav-right {

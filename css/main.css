@@ -32,11 +32,16 @@ html {
     font-family: 'Courier New', Courier, monospace;
     font-size: 2em;
     font-weight: normal;
+    opacity: 1;
+    transform: none;
+}
+
+body.landing-page .content-section {
     opacity: 0;
     transition: opacity 0.5s ease, transform 1.5s ease;
 }
 
-.content-section.visible {
+body.landing-page .content-section.visible {
     opacity: 1;
     transition: opacity 1.5s ease, transform 1.5s ease;
 }

@@ -10,23 +10,26 @@
     <link rel="stylesheet" href="css/navbar.css">
 </head>
 
-<body>
+<body class="landing-page">
     <div class="navbar" id="navbar">
         <div class="nav-left">
-            <p>Davis Toth Portfolio</p>
+            <a href="index.html">
+                <p>Davis Toth Portfolio</p>
+            </a>
         </div>
         <div class="nav-right">
             <a href="#about">about</a>
             <div class="dropdown">
                 <a href="#projects">projects</a>
                 <div class="dropdown-content">
-                    <a href="#mario-kart-robot">mario_kart_robot/</a>
-                    <a href="#detective-robot">detective_robot/</a>
-                    <a href="#assembly-clock">assembly_clock/</a>
-                    <a href="#ac-ionic-thruster">ac_ionic_thruster/</a>
+                    <a href="projects/mario-kart-robot.html">mario_kart_robot/</a>
+                    <a href="projects/detective-robot.html">detective_robot/</a>
+                    <a href="projects/assembly-clock.html">assembly_clock/</a>
+                    <a href="projects/ac-ionic-thruster.html">ac_ionic_thruster/</a>
+                    <a href="projects/wireless-drone.html">wireless_drone/</a>
                 </div>
             </div>
-            <a href="resume.pdf" target="_blank">resumé</a>
+            <a href="assets/resume.pdf" target="_blank">resumé</a>
         </div>
     </div>
 
@@ -43,206 +46,25 @@
     <section class="content-section" id="table-of-contents">
         <p>> ls</p>
         <div class="project-link">
-            <a href="#mario-kart-robot">mario_kart_robot/</a>
+            <a href="projects/mario-kart-robot.html">mario_kart_robot/</a>
             <p class="tags">#robotics #CAD #3D-printing #soldering #C</p>
         </div>
         <div class="project-link">
-            <a href="#detective-robot">detective_robot/</a>
+            <a href="projects/detective-robot.html">detective_robot/</a>
             <p class="tags">#Python #Linux #computer_vision #AI/ML</p>
         </div>
         <div class="project-link">
-            <a href="#assembly-clock">assembly_clock/</a>
+            <a href="projects/assembly-clock.html">assembly_clock/</a>
             <p class="tags">#FPGA #assembly_language</p>
         </div>
         <div class="project-link">
-            <a href="#ac-ionic-thruster">ac_ionic_thruster/</a>
+            <a href="projects/ac-ionic-thruster.html">ac_ionic_thruster/</a>
             <p class="tags">#particle_physics #high_voltage #simulation #prototyping</p>
         </div>
-    </section>
-
-    <section class="content-section" id="mario-kart-robot">
-        <h3>mario_kart_robot/</h3>
-        <p>> cat description.txt</p>
-        <p>
-            An autonomous robot built from scratch to race in a Mario Kart themed competition
-        </p>
-        <br>
-        <p>> open *.png</p>
-        <div class="image-container">
-            <img src="253/image1.png" alt="mario_robot_image1">
-            <img src="253/image3.png" alt="mario_robot_image3">
-            <img src="253/image2.png" alt="mario_robot_image2">
-            <img src="253/image4.png" alt="mario_robot_image4">
-            <img src="253/image5.png" alt="mario_robot_image5">
+        <div class="project-link">
+            <a href="projects/wireless-drone.html">wireless_drone/</a>
+            <p class="tags">#wireless_power_transfer #controls #circuitry</p>
         </div>
-        <br>
-        <p>> open *.gif</p>
-        <div class="gif-container">
-            <img src="253/tape.gif" alt="tape-gif" class="gif-253" />
-            <img src="253/zipline.gif" alt="zipline-gif" class="gif-253" />
-            <img src="253/objects.gif" alt="objects-gif" class="gif-253" />
-        </div>
-        <div class="caption" id="253-gif-caption">watch the competition video below for more!</div>
-        <br>
-        <p>> ls links/</p>
-        <p>
-            <a href="https://drive.google.com/file/d/1w6-7t8ydU0or7luZHDUsF-WXsSLSsT3a/view?usp=share_link"
-                target="_blank">competition_video.mp4</a>
-            <a href="https://cad.onshape.com/documents/bb7dcfccabe3497275c493e6/w/af5099d192e8e4b0dffb7119/e/1694ee9cc88bf6efe85e1a26?renderMode=0&uiState=670229a10cfcd85cc1702df6"
-                target="_blank">cad_model.onshape</a>
-            <a href="https://github.com/josheuchert/ROBERTOBOT" target="_blank">source_code.github</a>
-        </p>
-        <br>
-        <p>For a detailed breakdown of the project, read the report below!</p>
-        <p class="command">> open project.rpt</p>
-        <div class="hidden-content">
-            <div class="pdf-container">
-                <iframe src="253/report.pdf" title="Mario Kart Robot Report" frameborder="0"></iframe>
-            </div>
-        </div>
-    </section>
-
-    <section class="content-section" id="detective-robot">
-        <h3>detective_robot/</h3>
-        <p>> cat description.txt</p>
-        <p>A robot programmed to navigate a virtual obstacle course and solve a crime</p>
-        <br>
-        <p>> open road_pid*.gif</p>
-        <div class="image-sequence-container">
-            <div class="image-sequence">
-                <img src="353/road1/img1.jpg" alt="road1_image1" class="active">
-                <img src="353/road1/img2.jpg" alt="road1_image2">
-                <img src="353/road1/img3.jpg" alt="road1_image3">
-                <img src="353/road1/img4.jpg" alt="road1_image4">
-                <img src="353/road1/img5.jpg" alt="road1_image5">
-                <img src="353/road1/img6.jpg" alt="road1_image6">
-                <img src="353/road1/img7.jpg" alt="road1_image7">
-                <img src="353/road1/img8.jpg" alt="road1_image8">
-            </div>
-            <div class="image-sequence">
-                <img src="353/road2/img1.jpg" alt="road2_image1" class="active">
-                <img src="353/road2/img2.jpg" alt="road2_image2">
-                <img src="353/road2/img3.jpg" alt="road2_image3">
-                <img src="353/road2/img4.jpg" alt="road2_image4">
-                <img src="353/road2/img5.jpg" alt="road2_image5">
-                <img src="353/road2/img6.jpg" alt="road2_image6">
-                <img src="353/road2/img7.jpg" alt="road2_image7">
-                <img src="353/road2/img8.jpg" alt="road2_image8">
-            </div>
-        </div>
-        <div class="caption" id="image-caption-1">threshold for white road lines</div>
-        <br>
-        <p>> open desert_pid*.gif</p>
-        <div class="image-sequence-container">
-            <div class="image-sequence">
-                <img src="353/desert1/img1.jpg" alt="desert1_image1" class="active">
-                <img src="353/desert1/img2.jpg" alt="desert1_image2">
-                <img src="353/desert1/img3.jpg" alt="desert1_image3">
-                <img src="353/desert1/img4.jpg" alt="desert1_image4">
-                <img src="353/desert1/img5.jpg" alt="desert1_image5">
-                <img src="353/desert1/img6.jpg" alt="desert1_image6">
-                <img src="353/desert1/img7.jpg" alt="desert1_image7">
-                <img src="353/desert1/img8.jpg" alt="desert1_image8">
-            </div>
-            <div class="image-sequence">
-                <img src="353/desert2/img1.jpg" alt="desert2_image1" class="active">
-                <img src="353/desert2/img2.jpg" alt="desert2_image2">
-                <img src="353/desert2/img3.jpg" alt="desert2_image3">
-                <img src="353/desert2/img4.jpg" alt="desert2_image4">
-                <img src="353/desert2/img5.jpg" alt="desert2_image5">
-                <img src="353/desert2/img6.jpg" alt="desert2_image6">
-                <img src="353/desert2/img7.jpg" alt="desert2_image7">
-                <img src="353/desert2/img8.jpg" alt="desert2_image8">
-            </div>
-        </div>
-        <div class="caption" id="image-caption-2">threshold for white road lines</div>
-        <br>
-        <p>> open sign_crop*.gif</p>
-        <div class="image-sequence-container">
-            <div class="image-sequence">
-                <img src="353/sign1/img1.jpg" alt="sign1_image1" class="active">
-                <img src="353/sign1/img2.jpg" alt="sign1_image2">
-                <img src="353/sign1/img3.jpg" alt="sign1_image3">
-                <img src="353/sign1/img4.jpg" alt="sign1_image4">
-                <img src="353/sign1/img5.jpg" alt="sign1_image5">
-                <img src="353/sign1/img6.jpg" alt="sign1_image6">
-                <img src="353/sign1/img7.jpg" alt="sign1_image7">
-                <img src="353/sign1/img8.jpg" alt="sign1_image8">
-                <img src="353/sign1/img9.jpg" alt="sign1_image9">
-            </div>
-            <div class="image-sequence">
-                <img src="353/sign2/img1.jpg" alt="sign2_image1" class="active">
-                <img src="353/sign2/img2.jpg" alt="sign2_image2">
-                <img src="353/sign2/img3.jpg" alt="sign2_image3">
-                <img src="353/sign2/img4.jpg" alt="sign2_image4">
-                <img src="353/sign2/img5.jpg" alt="sign2_image5">
-                <img src="353/sign2/img6.jpg" alt="sign2_image6">
-                <img src="353/sign2/img7.jpg" alt="sign2_image7">
-                <img src="353/sign2/img8.jpg" alt="sign2_image8">
-                <img src="353/sign2/img9.jpg" alt="sign2_image9">
-            </div>
-        </div>
-        <div class="caption" id="image-caption-3">threshold for the sign in two ways, logical AND the results</div>
-        <br>
-        <p>> open demo*.gif</p>
-        <div class="gif-container">
-            <img src="353/pov.gif" alt="pov-gif" class="gif-353" />
-            <img src="353/map.gif" alt="map-gif" class="gif-353" />
-        </div>
-        <div class="caption" id="253-gif-caption">watch the demo video below for more!</div>
-        <br>
-        <p>> ls links/</p>
-        <p>
-            <a href="https://drive.google.com/file/d/10dJ2QrjZod7UEyLq2d78IsoToaAfe3H6/view?usp=share_link"
-                target="_blank">demo_video.mp4</a>
-            <a href="https://github.com/brooklynnae/BRODA_enph353.git" target="_blank">source_code.github</a>
-        </p>
-        <br>
-        <p class="command">> cat project.rpt</p>
-        <div class="hidden-content">
-            <p>
-                This project was a deep dive into computer vision and control systems, along with some machine
-                learning.
-            </p>
-            <p>
-                To be completed...
-            </p>
-        </div>
-    </section>
-
-    <section class="content-section" id="assembly-clock">
-        <h3>assembly_clock/</h3>
-        <p>> cat description.txt</p>
-        <p>A digital clock programmed in assembly language on the DE0-CV FPGA board</p>
-        <br>
-        <p>> open demo.gif</p>
-        <img src="clock/demo.gif" alt="clock-demo" class="clock-gif" />
-        <br>
-        <p>> ls links/</p>
-        <p>
-            <a href="https://drive.google.com/file/d/1Pih4xNc-DAkgI93Po620b1XOz5TsJskU/view?usp=share_link"
-                target="_blank">display_modes.mp4</a>
-            <a href="https://drive.google.com/file/d/1hP8X9__XnFraSWP4BIFMsYvDi3j28dbl/view?usp=share_link"
-                target="_blank">setup_demo.mp4</a>
-            <a href="https://github.com/davisgtoth/AssemblyClock" target="_blank">source_code.github</a>
-        </p>
-        <br>
-        <p class="command">> cat project.rpt</p>
-        <div class="hidden-content">
-            <p>
-                Check out the github repo for demo videos and user guide.
-            </p>
-            <p>
-                To be completed...
-            </p>
-        </div>
-    </section>
-
-    <section class="content-section" id="ac-ionic-thruster">
-        <h3>ac_ionic_thruster/</h3>
-        <p class="command">> cat description.txt</p>
-        <p class="hidden-content">This project is in progress...</p>
-        <br>
     </section>
 
     <section class="content-section" id="about">
