@@ -1,0 +1,26 @@
+[
+    {
+        "src": "../assets/ac_thrust/test_stand/ts1.png",
+        "caption": "Initial DC Test Stand Idea"
+    },
+    {
+        "src": "../assets/ac_thrust/test_stand/ts2.png",
+        "caption": "DC Test Stand Sketch \u2014 Open"
+    },
+    {
+        "src": "../assets/ac_thrust/test_stand/ts3.png",
+        "caption": "DC Test Stand Sketch \u2014 Closed"
+    },
+    {
+        "src": "../assets/ac_thrust/test_stand/ts4.png",
+        "caption": "DC Test Stand Sketch \u2014 Closed with Faraday Cage"
+    },
+    {
+        "src": "../assets/ac_thrust/test_stand/ts5.png",
+        "caption": "Safety Circuit \u2014 System Off"
+    },
+    {
+        "src": "../assets/ac_thrust/test_stand/ts6.png",
+        "caption": "Safety Circuit \u2014 System On"
+    }
+]

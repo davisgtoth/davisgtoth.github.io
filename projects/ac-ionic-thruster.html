@@ -21,10 +21,10 @@
             <div class="dropdown">
                 <a href="../index.html#projects">projects</a>
                 <div class="dropdown-content">
+                    <a href="../projects/ac-ionic-thruster.html">ac_ionic_thruster/</a>
                     <a href="../projects/mario-kart-robot.html">mario_kart_robot/</a>
                     <a href="../projects/detective-robot.html">detective_robot/</a>
                     <a href="../projects/assembly-clock.html">assembly_clock/</a>
-                    <a href="../projects/ac-ionic-thruster.html">ac_ionic_thruster/</a>
                     <a href="../projects/wireless-drone.html">wireless_drone/</a>
                 </div>
             </div>
@@ -32,12 +32,104 @@
         </div>
     </div>
 
-    <section class="content-section" id="ac-ionic-thruster">
-        <h3>ac_ionic_thruster/</h3>
-        <p class="command">> cat description.txt</p>
-        <p class="hidden-content">This project is in progress...</p>
-        <br>
-    </section>
+    <main class="project-page">
+        <div class="project-hero">
+            <h3 class="hero-title">
+                <span id="typed-text"></span><span class="cursor"></span>
+            </h3>
+            <img src="../assets/ac_thrust/hero_img.png" alt="AC Ionic Thruster hero image">
+        </div>
+
+        <section class="project-section">
+            <div class="project-text">
+                <h2>Objective</h2>
+                <p>
+                    Ionic thrusters are a form of electric propulsion that generate thrust by accelerating ions using
+                    electric fields. Compared to traditional chemical rockets, ionic thrusters are significantly more
+                    efficient. However, they generate low levels of thrust and so are only used in outer space.
+                    <br>
+                    <br>
+                    The goal of this project was to investigate the addition of AC technology to ion thrusters in the
+                    hopes of increasing thrust and thrust efficiency for potential terrestrial applications. The project
+                    was broken down into 4 stages, with simulation and design of both DC and AC thrusters.
+                </p>
+            </div>
+            <div class="project-image">
+                <figure>
+                    <img src="../assets/ac_thrust/objective.png" alt="Project objective slide">
+                    <figcaption>Project Objective</figcaption>
+                </figure>
+            </div>
+        </section>
+
+        <section class="project-section">
+            <div class="slideshow-container" id="slideshow1">
+                <div class="slides-wrapper"></div>
+
+                <a class="prev">❮</a>
+                <a class="next">❯</a>
+
+                <div class="caption-container"></div>
+            </div>
+
+
+            <div class="project-text">
+                <h2>Theory</h2>
+                <p>
+                    The project was approached from first principles, starting with the physics of ion propulsion.
+                    The slides to the left outline the underlying mechanisms and theory that govern ionic thrusters in a
+                    terrestrial setting.
+                    <br>
+                    <br>
+                    The slides also showcase possible AC modifications, including pulsing the DC voltage to generate
+                    more ions while keeping the system efficient, as well as using a linear accelerating to boost the
+                    thrust generated from the ions.
+                </p>
+            </div>
+        </section>
+
+        <section class="project-section">
+            <div class="project-text">
+                <h2>Test Stand Design</h2>
+                <p>
+                    To derisk the development of the DC apparatus, a simulation was first developed. Linking together
+                    the equations from the theory, a Jupyter Notebook was created to simulate the expected thrust and
+                    efficiency of the DC thruster for various geometries and voltages.
+                    <br>
+                    <br>
+                    Initial sketches were then created for the test stand. Because the ion thruster operates at high
+                    voltages (up to 30kV), safety was a primary concern. The design was iterated on multiple times to
+                    ensure that the high voltage components were properly insulated and shielded. Various sketches of
+                    the test stand design and the safety circuitry are shown below.
+                    <br>
+                </p>
+            </div>
+            <div class="project-image">
+                <figure>
+                    <img src="../assets/ac_thrust/dc_sim.png" alt="DC Simulation">
+                    <figcaption>DC Thruster Simulation Workflow</figcaption>
+                </figure>
+            </div>
+        </section>
+
+        <section class="project-section">
+            <div class="slideshow-container" id="slideshow2">
+                <div class="slides-wrapper"></div>
+
+                <a class="prev">❮</a>
+                <a class="next">❯</a>
+
+                <div class="caption-container"></div>
+            </div>
+            <div class="project-text">
+                <h2>Results</h2>
+                <p>
+                    Ultimately, the project was shelved due to cost and safety concerns surrounding the high voltages.
+                    However, the project doesn't go without any loss. A lot was learned about how to scope out a
+                    research project, think at a systems level, and work with high voltages.
+                </p>
+        </section>
+    </main>
 
     <br>
     <div class="bottom-spacer-top"></div>
@@ -46,7 +138,25 @@
     <div class="bottom-spacer-bottom"></div>
     <br>
 
-    <script src="../javascript/commands.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const text = "ac_ionic_thruster/";   // the text to type
+            const typedText = document.getElementById("typed-text");
+            let index = 0;
+
+            function typeChar() {
+                if (index < text.length) {
+                    typedText.textContent += text.charAt(index);
+                    index++;
+                    setTimeout(typeChar, 120);  // typing speed (ms per character)
+                }
+            }
+
+            typeChar();
+        });
+    </script>
+
+    <script src="../javascript/slideshow.js"></script>
 
 </body>
 
