@@ -32,12 +32,54 @@
         </div>
     </div>
 
-    <section class="content-section" id="wireless-drone">
-        <h3>wireless_drone/</h3>
-        <p class="command">> cat description.txt</p>
-        <p class="hidden-content">This project is in progress...</p>
-        <br>
-    </section>
+    <main class="project-page">
+        <div class="project-hero">
+            <h3 class="hero-title">
+                <span id="typed-text"></span><span class="cursor"></span>
+            </h3>
+            <img src="../assets/wireless_drone/hero_img.png" alt="Wireless Drone hero image">
+        </div>
+
+        <section class="project-section">
+            <div class="project-text">
+                <h2>Objective</h2>
+                <p>
+                    The goal of the project is to design and build a drone that is wirelessly powered and
+                    self-stabilizing. The drone is to be designed using completely passive components, that is, the
+                    drone itself contains no batteries, sensors or microcontrollers. The idea behind the project is that
+                    magnetic fields that wirelessly transfer power to the drone can be manipulated into a well shape
+                    which will provide a natural control mechanism to stabilize the drone.
+                </p>
+            </div>
+            <div class="project-image">
+                <figure>
+                    <img src="../assets/wireless_drone/objective.png" alt="Project objective slide">
+                    <figcaption>Project Objective</figcaption>
+                </figure>
+            </div>
+        </section>
+
+        <section class="project-section">
+            <div class="project-image">
+                <figure>
+                    <img src="../assets/wireless_drone/objective.png" alt="Project objective slide">
+                    <figcaption>Project Objective</figcaption>
+                </figure>
+            </div>
+            <div class="project-text">
+                <h2>Theory</h2>
+                <p>
+                    The drone is powered using resonant inductive coupling, where power is transferred from a driving
+                    (TX) LC tank to four separate receiving (RX) LC tanks on the drone. The four RX coils on the drone
+                    give it a quadcopter design where each is hooked up via a full-wave rectifier to a motor that spins
+                    a propeller. This quadcopter design allows the self-stabilizing mechanism to work as when the drone
+                    drifts off center, the magnetic field strength in one of the coils increases, causing the motor in
+                    one of the RX coils to spin faster, tipping and restoring the drone back into the well.
+                </p>
+            </div>
+
+        </section>
+    </main>
 
     <br>
     <div class="bottom-spacer-top"></div>
@@ -46,7 +88,23 @@
     <div class="bottom-spacer-bottom"></div>
     <br>
 
-    <script src="../javascript/commands.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const text = "wireless_drone/";   // the text to type
+            const typedText = document.getElementById("typed-text");
+            let index = 0;
+
+            function typeChar() {
+                if (index < text.length) {
+                    typedText.textContent += text.charAt(index);
+                    index++;
+                    setTimeout(typeChar, 120);  // typing speed (ms per character)
+                }
+            }
+
+            typeChar();
+        });
+    </script>
 
 </body>
 
