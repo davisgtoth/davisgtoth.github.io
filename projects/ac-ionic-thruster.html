@@ -38,19 +38,21 @@
                 <span id="typed-text"></span><span class="cursor"></span>
             </h3>
             <img src="../assets/ac_thrust/hero_img.png" alt="AC Ionic Thruster hero image">
+            <div class="scroll-arrow" id="scrollArrow"></div>
         </div>
 
         <section class="project-section">
             <div class="project-text">
                 <h2>Objective</h2>
                 <p>
-                    Ionic thrusters are a form of electric propulsion that generate thrust by accelerating ions using
-                    electric fields. Compared to traditional chemical rockets, ionic thrusters are significantly more
-                    efficient. However, they generate low levels of thrust and so are only used in outer space.
+                    Ionic thrusters are a form of electric propulsion that generate thrust by accelerating ions in
+                    uniform (DC) electric fields. Compared to traditional chemical rockets, ionic thrusters are
+                    significantly more efficient. However, their low thrust generation restricts their use to the vacuum
+                    of space.
                     <br>
                     <br>
-                    The goal of this project was to investigate the addition of AC technology to ion thrusters in the
-                    hopes of increasing thrust and thrust efficiency for potential terrestrial applications. The project
+                    The goal of this project was to investigate the addition of AC technology to ion thrusters, with the
+                    aim of increasing thrust and thrust efficiency for potential terrestrial applications. The project
                     was broken down into 4 stages, with simulation and design of both DC and AC thrusters.
                 </p>
             </div>
@@ -62,13 +64,12 @@
             </div>
         </section>
 
-        <section class="project-section">
+        <section class="project-section reverse-mobile">
             <div class="slideshow-container" id="slideshow1">
-                <div class="slides-wrapper"></div>
-
-                <a class="prev">❮</a>
-                <a class="next">❯</a>
-
+                <div class="slides-wrapper">
+                    <a class="prev">❮</a>
+                    <a class="next">❯</a>
+                </div>
                 <div class="caption-container"></div>
             </div>
 
@@ -81,9 +82,9 @@
                     terrestrial setting.
                     <br>
                     <br>
-                    The slides also showcase possible AC modifications, including pulsing the DC voltage to generate
-                    more ions while keeping the system efficient, as well as using a linear accelerating to boost the
-                    thrust generated from the ions.
+                    The slides also showcase possible AC modifications. These include pulsing the DC voltage to generate
+                    more ions while keeping the system efficient, and using a linear accelerator to boost the thrust
+                    generated from the ions.
                 </p>
             </div>
         </section>
@@ -92,16 +93,15 @@
             <div class="project-text">
                 <h2>Test Stand Design</h2>
                 <p>
-                    To derisk the development of the DC apparatus, a simulation was first developed. Linking together
-                    the equations from the theory, a Jupyter Notebook was created to simulate the expected thrust and
-                    efficiency of the DC thruster for various geometries and voltages.
+                    To mitigate development risks, we first built a simulation in a Jupyter Notebook. By linking
+                    theoretical equations, we modeled the expected thrust and efficiency across various geometries and
+                    voltage configurations.
                     <br>
                     <br>
-                    Initial sketches were then created for the test stand. Because the ion thruster operates at high
-                    voltages (up to 30kV), safety was a primary concern. The design was iterated on multiple times to
-                    ensure that the high voltage components were properly insulated and shielded. Various sketches of
-                    the test stand design and the safety circuitry are shown below.
-                    <br>
+                    Given the high operating voltages (up to 30kV), safety was the primary driver for the physical test
+                    stand design. The test stand underwent multiple iterations to ensure the high-voltage components
+                    were properly insulated and shielded. Sketches of the mechanical design and safety circuitry are
+                    shown below.
                 </p>
             </div>
             <div class="project-image">
@@ -112,7 +112,7 @@
             </div>
         </section>
 
-        <section class="project-section">
+        <section class="project-section reverse-mobile">
             <div class="slideshow-container" id="slideshow2">
                 <div class="slides-wrapper"></div>
 
@@ -125,8 +125,10 @@
                 <h2>Results</h2>
                 <p>
                     Ultimately, the project was shelved due to cost and safety concerns surrounding the high voltages.
-                    However, the project doesn't go without any loss. A lot was learned about how to scope out a
-                    research project, think at a systems level, and work with high voltages.
+                    Despite this, the research phase provided valuable experience in scoping complex engineering
+                    projects and applying systems-level thinking. The work highlights the practical challenges of
+                    high-voltage experimentation and establishes a theoretical framework for future AC propulsion
+                    studies.
                 </p>
         </section>
     </main>
@@ -157,6 +159,7 @@
     </script>
 
     <script src="../javascript/slideshow.js"></script>
+    <script src="../javascript/scroll-indicator.js"></script>
 
 </body>
 

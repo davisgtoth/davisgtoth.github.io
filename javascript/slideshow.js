@@ -1,6 +1,8 @@
 function initSlideshow(containerId, jsonPath) {
     let slideIndex = 1;
     let slidesData = [];
+    let autoPlayTimer = null;
+    const AUTO_PLAY_DELAY = 10000; // Change this to your preferred threshold (ms)
 
     const container = document.getElementById(containerId);
     const wrapper = container.querySelector(".slides-wrapper");
@@ -15,6 +17,7 @@ function initSlideshow(containerId, jsonPath) {
             slidesData = data;
             buildSlides();
             showSlides(slideIndex);
+            setupObserver();
         });
 
     function buildSlides() {
@@ -32,6 +35,7 @@ function initSlideshow(containerId, jsonPath) {
 
     function showSlides(n) {
         const slides = wrapper.getElementsByClassName("slide");
+        if (slides.length === 0) return;
 
         if (n > slides.length) { slideIndex = 1; }
         if (n < 1) { slideIndex = slides.length; }
@@ -46,11 +50,47 @@ function initSlideshow(containerId, jsonPath) {
 
     function plusSlides(n) {
         showSlides(slideIndex += n);
+        resetTimer();
+    }
+
+    function startTimer() {
+        if (!autoPlayTimer) {
+            autoPlayTimer = setInterval(() => {
+                plusSlides(1);
+            }, AUTO_PLAY_DELAY);
+        }
+    }
+
+    function stopTimer() {
+        clearInterval(autoPlayTimer);
+        autoPlayTimer = null;
+    }
+
+    function resetTimer() {
+        stopTimer();
+        startTimer();
+    }
+
+    function setupObserver() {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    startTimer(); // Slideshow is in view
+                } else {
+                    stopTimer();  // User scrolled away
+                }
+            });
+        }, { threshold: 0.8 }); // Triggers when 80% of the slideshow is visible
+
+        observer.observe(container);
     }
 
     // Hook up buttons
     prevBtn.addEventListener("click", () => plusSlides(-1));
     nextBtn.addEventListener("click", () => plusSlides(1));
+
+    container.addEventListener("mouseenter", stopTimer);
+    container.addEventListener("mouseleave", startTimer);
 }
 
 // Initialize both slideshows

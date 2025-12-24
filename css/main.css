@@ -158,9 +158,6 @@ body.landing-page .content-section.visible {
     font-size: 0.6em;
     margin-top: 0px;
     color: #ffffff;
-    /* display: inline-block;
-    margin-left: auto;
-    margin-right: auto; */
 }
 
 .horizontal-line {
@@ -298,7 +295,8 @@ p.footnote {
 .project-section {
     display: flex;
     justify-content: center;
-    align-items: stretch;
+    /* align-items: stretch; */
+    align-items: center;
     gap: 3rem;
     max-width: 1300px;
     margin: 4rem auto;
@@ -330,6 +328,7 @@ p.footnote {
     display: flex;
     align-items: center;
     justify-content: center;
+    margin-top: 3rem;
 }
 
 .project-image img {
@@ -396,7 +395,6 @@ p.footnote {
     width: 0.6em;
     height: 1em;
     background-color: #ffffff;
-    /* terminal green */
     margin-left: 0.1em;
     animation: blink 1s step-end infinite;
     vertical-align: bottom;
@@ -410,6 +408,9 @@ p.footnote {
 
 /* Slideshow container */
 .slideshow-container {
+    flex: 1;
+    min-width: 0;
+    margin-top: 3rem;
     position: relative;
     max-width: 600px;
     width: 100%;
@@ -452,10 +453,10 @@ p.footnote {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    padding: 6px 10px;
+    font-size: 0.9rem;
+    padding: 0.5em 0.8em;
     color: white;
     font-weight: bold;
-    font-size: 0.9rem;
     border-radius: 50%;
     user-select: none;
     background: rgba(0, 0, 0, 0.25);
@@ -475,4 +476,106 @@ p.footnote {
 .next:hover {
     background: rgba(0, 0, 0, 0.5);
     transform: translateY(-50%) scale(1.1);
+}
+
+@media (max-width: 900px) {
+    .project-section {
+        flex-direction: column;
+        /* Stacks text on top of image */
+        align-items: center;
+        /* Centers everything in the column */
+        gap: 1.5rem;
+        /* Reduces the gap for smaller screens */
+        margin: 2rem auto;
+        /* Reduces vertical spacing between sections */
+    }
+
+    .project-text,
+    .project-image,
+    .slideshow-container {
+        max-width: 100%;
+        /* Allows elements to take full width */
+        margin-top: 0;
+        /* Removes the header offset we added earlier */
+    }
+
+    .project-hero {
+        height: 60vh;
+    }
+
+    .project-hero .hero-title {
+        font-size: 1.5rem;
+        /* Shrinks the hero title text */
+    }
+
+    .project-section.reverse-mobile {
+        flex-direction: column-reverse;
+    }
+}
+
+/* --- SCROLL INDICATOR BUTTON --- */
+.scroll-arrow {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    width: 50px;
+    height: 50px;
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 50%;
+
+    cursor: pointer;
+    opacity: 0;
+    transition: all 0.3s ease;
+    z-index: 10;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* THE ARROW (Pure CSS Chevron) */
+.scroll-arrow::after {
+    content: '';
+    width: 10px;
+    height: 10px;
+
+    /* Create the arrow shape using borders */
+    border-right: 3px solid rgba(255, 255, 255, 0.8);
+    border-bottom: 3px solid rgba(255, 255, 255, 0.8);
+
+    /* Rotate it to point down */
+    transform: rotate(45deg);
+    margin-bottom: 3px;
+    /* Visual correction to center it perfectly */
+}
+
+/* VISIBLE STATE (Added by JS) */
+.scroll-arrow.visible {
+    opacity: 1;
+    animation: pulse 2s infinite;
+}
+
+/* HOVER STATE */
+.scroll-arrow:hover {
+    background-color: rgba(0, 0, 0, 0.5);
+    /* Brighten background */
+    transform: translateX(-50%) scale(1.1);
+    /* Slightly grow the button */
+}
+
+/* ANIMATION: Gentle Pulse */
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.4);
+    }
+
+    70% {
+        box-shadow: 0 0 0 10px rgba(255, 255, 255, 0);
+    }
+
+    100% {
+        box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
+    }
 }

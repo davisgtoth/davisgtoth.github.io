@@ -45,7 +45,7 @@
                 <h2>Objective</h2>
                 <p>
                     The goal of the project is to design and build a drone that is wirelessly powered and
-                    self-stabilizing. The drone is to be designed using completely passive components, that is, the
+                    self-stabilizing. The drone is to be designed using strictly passive components, that is, the
                     drone itself contains no batteries, sensors or microcontrollers. The idea behind the project is that
                     magnetic fields that wirelessly transfer power to the drone can be manipulated into a well shape
                     which will provide a natural control mechanism to stabilize the drone.
@@ -69,15 +69,50 @@
             <div class="project-text">
                 <h2>Theory</h2>
                 <p>
-                    The drone is powered using resonant inductive coupling, where power is transferred from a driving
-                    (TX) LC tank to four separate receiving (RX) LC tanks on the drone. The four RX coils on the drone
+                    The drone is powered through inductive coupling between a transmitting (TX) coil and multiple
+                    receiving (RX) coil. From the Biot-Savart law, we know that a current-carrying wire generates a
+                    magnetic field. If we drive the TX coil with a time-varying current, it will create a time-varying
+                    magnetic field, and by Faraday's Law, this will induce a voltage in the RX coils on the drone. This
+                    Induction, this time-varying magnetic field will induce a voltage in a nearby conductor. By placing
+                    a
+                    receiving coil on the drone within the magnetic field of the transmitting coil, we can induce a
+                    voltage
+                    in the receiving coil, which can then be rectified and used to power the drone's motors.
+                    <br>
+
+                    When the TX coil is driven with an AC signal, we know via the Biot-Savart law
+                    that it creates a time-varying magnetic field. According to Faraday's Law, this time-varying
+                    magnetic
+                    field
+
+
+                    The drone is powered using resonant inductive coupling, where power is transferred from a driving or
+                    transmitting (TX) LC tank to four separate receiving (RX) LC tanks on the drone. The four RX coils
+                    on the drone
                     give it a quadcopter design where each is hooked up via a full-wave rectifier to a motor that spins
                     a propeller. This quadcopter design allows the self-stabilizing mechanism to work as when the drone
                     drifts off center, the magnetic field strength in one of the coils increases, causing the motor in
                     one of the RX coils to spin faster, tipping and restoring the drone back into the well.
                 </p>
             </div>
+        </section>
 
+        <section class="project-section">
+            <div class="project-text">
+                <h2>System Overview</h2>
+                <p>
+                    TX LC tank driven at resonance using H bridge to turn DC to AC
+                    RX coils with LC tank to receive power, full wave rectifier to convert AC to DC to power the motor
+                    Mechanical design of the drone impacts its stability/response via propellers, moment of inertia and
+                    fins/sails for damping
+                </p>
+            </div>
+            <div class="project-image">
+                <figure>
+                    <img src="../assets/wireless_drone/objective.png" alt="Project objective slide">
+                    <figcaption>System Level Diagram</figcaption>
+                </figure>
+            </div>
         </section>
     </main>
 
