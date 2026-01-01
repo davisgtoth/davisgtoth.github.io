@@ -7,7 +7,7 @@ function initSlideshow(containerId, jsonPath) {
     let slideIndex = 1;
     let slidesData = [];
     let autoPlayTimer = null;
-    const AUTO_PLAY_DELAY = 15000; // Change this to your preferred threshold (ms)
+    const AUTO_PLAY_DELAY = 20000; // Change this to your preferred threshold (ms)
 
     const wrapper = container.querySelector(".slides-wrapper");
     const caption = container.querySelector(".caption-container");
