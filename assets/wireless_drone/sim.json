@@ -1,0 +1,46 @@
+[
+    {
+        "src": "../assets/wireless_drone/simulation/bode_k.png",
+        "caption": "Bode plot of LTI model for various amounts of TX, RX coupling"
+    },
+    {
+        "src": "../assets/wireless_drone/simulation/bode_R.png",
+        "caption": "Bode plot of LTI model for various resistive loads"
+    },
+    {
+        "src": "../assets/wireless_drone/simulation/k_plot.png",
+        "caption": "Resonant frequency as a function of TX, RX coupling"
+    },
+    {
+        "src": "../assets/wireless_drone/simulation/model_trans.png",
+        "caption": "LTspice schematic of coupling with resistive load \u2014 transient response"
+    },
+    {
+        "src": "../assets/wireless_drone/simulation/model_trans_plot.png",
+        "caption": "Transient voltage across resistive load, R2 (pink) and TX inductor, L1 (blue)"
+    },
+    {
+        "src": "../assets/wireless_drone/simulation/model_freq.png",
+        "caption": "LTspice schematic of coupling with resistive load \u2014 frequency response"
+    },
+    {
+        "src": "../assets/wireless_drone/simulation/model_freq_plot.png",
+        "caption": "Frequency response across resistive load, R2 (green) with peak ~120 kHz"
+    },
+    {
+        "src": "../assets/wireless_drone/simulation/rect_trans.png",
+        "caption": "LTspice schematic of coupling with rectifier \u2014 transient response"
+    },
+    {
+        "src": "../assets/wireless_drone/simulation/rect_trans_plot.png",
+        "caption": "Transient voltage across rectified resistor load, R2 (pink) and TX inductor, L1 (blue)"
+    },
+    {
+        "src": "../assets/wireless_drone/simulation/rect_freq.png",
+        "caption": "LTspice schematic of coupling with rectifier \u2014 frequency response"
+    },
+    {
+        "src": "../assets/wireless_drone/simulation/rect_freq_plot.png",
+        "caption": "Frequency response across rectified resistor load, R2 (green)"
+    }
+]

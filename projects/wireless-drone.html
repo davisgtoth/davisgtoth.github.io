@@ -21,11 +21,11 @@
             <div class="dropdown">
                 <a href="../index.html#projects">projects</a>
                 <div class="dropdown-content">
+                    <a href="../projects/wireless-drone.html">wireless_drone/</a>
                     <a href="../projects/ac-ionic-thruster.html">ac_ionic_thruster/</a>
                     <a href="../projects/mario-kart-robot.html">mario_kart_robot/</a>
                     <a href="../projects/detective-robot.html">detective_robot/</a>
                     <a href="../projects/assembly-clock.html">assembly_clock/</a>
-                    <a href="../projects/wireless-drone.html">wireless_drone/</a>
                 </div>
             </div>
             <a href="../resume.pdf" target="_blank">resumé</a>
@@ -38,81 +38,159 @@
                 <span id="typed-text"></span><span class="cursor"></span>
             </h3>
             <img src="../assets/wireless_drone/hero_img.png" alt="Wireless Drone hero image">
+            <div class="scroll-arrow" id="scrollArrow"></div>
         </div>
 
         <section class="project-section">
             <div class="project-text">
                 <h2>Objective</h2>
                 <p>
-                    The goal of the project is to design and build a drone that is wirelessly powered and
-                    self-stabilizing. The drone is to be designed using strictly passive components, that is, the
-                    drone itself contains no batteries, sensors or microcontrollers. The idea behind the project is that
-                    magnetic fields that wirelessly transfer power to the drone can be manipulated into a well shape
-                    which will provide a natural control mechanism to stabilize the drone.
+                    Is it possible to achieve flight without active control? This project explores this question by
+                    engineering a drone that is wirelessly powered and self-stabilizing. The drone is designed without
+                    batteries, sensors, or microcontrollers, relying on strictly passive components. This constraint
+                    shifts the burden of stability from software to physics. By shaping the transmitting magnetic field
+                    into a potential well, the system generates a natural restoring force, allowing for passive control.
                 </p>
             </div>
             <div class="project-image">
                 <figure>
-                    <img src="../assets/wireless_drone/objective.png" alt="Project objective slide">
+                    <img src="../assets/wireless_drone/objective.png" alt="Project objective graphic">
                     <figcaption>Project Objective</figcaption>
                 </figure>
             </div>
         </section>
 
-        <section class="project-section">
+        <section class="project-section reverse-mobile">
             <div class="project-image">
                 <figure>
-                    <img src="../assets/wireless_drone/objective.png" alt="Project objective slide">
-                    <figcaption>Project Objective</figcaption>
+                    <img src="../assets/wireless_drone/system.png" alt="System Level Diagram">
+                    <figcaption>System Level Diagram</figcaption>
                 </figure>
             </div>
             <div class="project-text">
                 <h2>Theory</h2>
                 <p>
-                    The drone is powered through inductive coupling between a transmitting (TX) coil and multiple
-                    receiving (RX) coil. From the Biot-Savart law, we know that a current-carrying wire generates a
-                    magnetic field. If we drive the TX coil with a time-varying current, it will create a time-varying
-                    magnetic field, and by Faraday's Law, this will induce a voltage in the RX coils on the drone. This
-                    Induction, this time-varying magnetic field will induce a voltage in a nearby conductor. By placing
-                    a
-                    receiving coil on the drone within the magnetic field of the transmitting coil, we can induce a
-                    voltage
-                    in the receiving coil, which can then be rectified and used to power the drone's motors.
-                    <br>
-
-                    When the TX coil is driven with an AC signal, we know via the Biot-Savart law
-                    that it creates a time-varying magnetic field. According to Faraday's Law, this time-varying
-                    magnetic
-                    field
-
-
-                    The drone is powered using resonant inductive coupling, where power is transferred from a driving or
-                    transmitting (TX) LC tank to four separate receiving (RX) LC tanks on the drone. The four RX coils
-                    on the drone
-                    give it a quadcopter design where each is hooked up via a full-wave rectifier to a motor that spins
-                    a propeller. This quadcopter design allows the self-stabilizing mechanism to work as when the drone
-                    drifts off center, the magnetic field strength in one of the coils increases, causing the motor in
-                    one of the RX coils to spin faster, tipping and restoring the drone back into the well.
+                    Approached from first principles, the system relies on Faraday's Law and resonant
+                    inductive coupling between a transmitting (TX) LC tank and four receiving (RX) tanks. The
+                    oscillating magnetic field induces an AC voltage in each receiver coil which is subsequently
+                    rectified to drive the drone's motors, generating the lift necessary for flight.
+                </p>
+                <p>
+                    Stability is achieved through a quadcopter configuration and the geometry of the magnetic field. The
+                    transmitter creates a 'magnetic well' with a position-dependent power gradient. When the drone
+                    drifts, the coil entering the stronger field region generates more thrust, creating a restoring
+                    torque that naturally pushes the drone back to equilibrium.
                 </p>
             </div>
         </section>
 
         <section class="project-section">
             <div class="project-text">
-                <h2>System Overview</h2>
+                <h2>Simulation</h2>
                 <p>
-                    TX LC tank driven at resonance using H bridge to turn DC to AC
-                    RX coils with LC tank to receive power, full wave rectifier to convert AC to DC to power the motor
-                    Mechanical design of the drone impacts its stability/response via propellers, moment of inertia and
-                    fins/sails for damping
+                    With a <a href="../assets/wireless_drone/theory.pdf" target="_blank">theoretical
+                        framework</a> established, simulations were conducted to explore the complex dynamics
+                    and coupling within the system. A Python-based <a
+                        href="https://colab.research.google.com/drive/1K0rN9cA1kPFtgaQ2_YyLcx6EvbavrGgu?usp=sharing"
+                        target="_blank">LTI model</a> was created to analyze how variations in coupling, due to flight
+                    dynamics, impacts power transfer and resonance stability. The system's sensitivity to the RX load
+                    was also explored.
+                </p>
+                <p>
+                    Additionally, the circuitry was modeled in LTspice to quantify power transfer and the expected
+                    frequency response. This was critical for characterizing the impact of the full-wave bridge
+                    rectifier, an inherently non-linear component of the system.
                 </p>
             </div>
+            <div class="slideshow-container" id="wd_slideshow1">
+                <div class="slides-wrapper"></div>
+
+                <a class="prev">❮</a>
+                <a class="next">❯</a>
+
+                <div class="caption-container"></div>
+            </div>
+        </section>
+
+        <section class="project-section reverse-mobile">
             <div class="project-image">
                 <figure>
-                    <img src="../assets/wireless_drone/objective.png" alt="Project objective slide">
-                    <figcaption>System Level Diagram</figcaption>
+                    <img src="../assets/wireless_drone/test_stand.png" alt="Test Stand">
+                    <figcaption>Physical Test Stand Setup</figcaption>
                 </figure>
             </div>
+            <div class="project-text">
+                <h2>Test Stand</h2>
+                <p>
+                    The simulations demonstrated a strong dependence on the RX load, so given the
+                    complex non-linearities of modelling a motor, a shift towards rapid <i>physical</i>
+                    prototyping was necessary. A custom <a
+                        href="https://cad.onshape.com/documents/52908b6077309f2cc22d65d3/w/fbede0d85f8dc4509e971759/e/43488f6091f48dededc9a839?renderMode=0&uiState=69561fe6246c3bf70829dc18"
+                        target="_blank">test stand</a> was designed and 3D-printed to empirically
+                    characterize the system. It features a modular mounting system to fix an RX coil at precise
+                    coordinates, enabling measurements with fixed amounts of coupling.
+                </p>
+                <p>
+                    On the electronics side, a DC power supply drives an H-bridge, generating the high-frequency
+                    alternating current required for the TX tank. An Analog Discovery Pro oscilloscope is used for
+                    simultaneous telemetry of voltage and current waveforms across both the TX and RX coils.
+                </p>
+        </section>
+
+        <section class="project-section">
+            <div class="project-text">
+                <h2>Current Status</h2>
+                <p>
+                    Experiments have been conducted to characterize the RX coils under various circuit topologies,
+                    validating simulated predictions of frequency response stability. Additionally, system level
+                    testing has identified that tuning the operating frequency is the primary driver for maximizing
+                    power transfer. All data and analysis are available in the <a
+                        href="https://github.com/davisgtoth/Wireless-Drone-Data-Analysis" target="_blank">project
+                        repository</a>.
+                </p>
+                <p>
+                    To date, we have successfully achieved wireless flight of a single RX coil, with immediate plans to
+                    scale to the full quadcopter configuration. Future efforts will focus on emperically mapping and
+                    optimizing the magnetic field well to validate passive stability.
+                </p>
+                <p>
+                    As this project is in active development, new milestones may have been reached by the time you
+                    read this! Feel free to reach out for the latest updates or for any technical inquiries.
+                </p>
+            </div>
+            <div class="slideshow-container" id="wd_slideshow2">
+                <div class="slides-wrapper"></div>
+
+                <a class="prev">❮</a>
+                <a class="next">❯</a>
+
+                <div class="caption-container"></div>
+            </div>
+        </section>
+
+        <section class="project-section resources-section">
+            <div class="project-text">
+                <h2>Resources</h2>
+                <ul class="resource-list">
+                    <li>
+                        <a href="../assets/wireless_drone/theory.pdf" target="_blank">theory_notes.pdf</a>
+                    </li>
+                    <li>
+                        <a href="https://colab.research.google.com/drive/1K0rN9cA1kPFtgaQ2_YyLcx6EvbavrGgu?usp=sharing"
+                            target="_blank">lti_simulation.ipynb</a>
+                    </li>
+                    <li>
+                        <a href="https://cad.onshape.com/documents/52908b6077309f2cc22d65d3/w/fbede0d85f8dc4509e971759/e/43488f6091f48dededc9a839?renderMode=0&uiState=69561fe6246c3bf70829dc18"
+                            target="_blank">test_stand.CAD</a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/davisgtoth/Wireless-Drone-Data-Analysis/blob/main/analysis.ipynb"
+                            target="_blank">data_analysis_repo/analysis.ipynb</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="project-image" style="visibility: hidden; height: 0;"></div>
         </section>
     </main>
 
@@ -140,6 +218,9 @@
             typeChar();
         });
     </script>
+
+    <script src="../javascript/slideshow.js"></script>
+    <script src="../javascript/scroll-indicator.js"></script>
 
 </body>
 

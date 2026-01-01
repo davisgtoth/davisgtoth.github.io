@@ -188,7 +188,6 @@ p.footnote {
     max-width: 800px;
     display: block;
     margin: 0 auto;
-    /* margin-left: 20px; */
     margin-bottom: 20px;
     padding-bottom: 10px;
 }
@@ -235,7 +234,6 @@ p.footnote {
     width: 100%;
     height: auto;
     max-width: 600px;
-    /* margin-bottom: 0; */
     margin: 0 20px;
 }
 
@@ -295,11 +293,10 @@ p.footnote {
 .project-section {
     display: flex;
     justify-content: center;
-    /* align-items: stretch; */
     align-items: center;
     gap: 3rem;
     max-width: 1300px;
-    margin: 4rem auto;
+    margin: 2.5rem auto;
     padding: 0 1rem;
 }
 
@@ -320,6 +317,17 @@ p.footnote {
     margin-bottom: 1.5rem;
 }
 
+.project-text a {
+    color: #4b92f6;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.project-text a:hover {
+    color: #a6c8f9;
+    cursor: pointer;
+}
+
 /* Image column */
 .project-image {
     flex: 1;
@@ -331,11 +339,11 @@ p.footnote {
     margin-top: 3rem;
 }
 
-.project-image img {
-    width: 100%;
+.project-image img,
+.project-image video {
+    width: auto;
+    max-width: 100%;
     height: auto;
-    max-height: 450px;
-    object-fit: contain;
     border-radius: 10px;
     box-shadow: 0 6px 14px rgba(0, 0, 0, 0.2);
 }
@@ -429,11 +437,11 @@ p.footnote {
     display: none;
 }
 
-.slide img {
-    width: 100%;
+.slide img,
+.slide video {
+    width: auto;
+    max-width: 100%;
     height: auto;
-    max-height: 450px;
-    object-fit: contain;
     border-radius: 10px;
     box-shadow: 0 6px 14px rgba(0, 0, 0, 0.2);
 }
@@ -578,4 +586,35 @@ p.footnote {
     100% {
         box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
     }
+}
+
+/* === Resources Section === */
+.resource-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    margin-top: 1rem;
+}
+
+.resource-list li {
+    margin-bottom: 10px;
+}
+
+.resource-list a {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1.3rem;
+    color: #a6c8f9;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.resource-list a:hover {
+    color: #4b92f6;
+}
+
+.resource-list li::before {
+    content: "./";
+    font-family: 'Courier New', Courier, monospace;
+    color: #808080;
+    margin-right: 3px;
 }

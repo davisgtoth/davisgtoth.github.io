@@ -1,0 +1,14 @@
+[
+    {
+        "src": "../assets/wireless_drone/videos/flight.mp4",
+        "caption": "Wireless flight of a single RX coil tethered in"
+    },
+    {
+        "src": "../assets/wireless_drone/videos/power_off.mp4",
+        "caption": "Wireless flight powered off "
+    },
+    {
+        "src": "../assets/wireless_drone/videos/jump.mp4",
+        "caption": "RX coil jumping out of magnetic well upon power on"
+    }
+]

@@ -1,10 +1,14 @@
 function initSlideshow(containerId, jsonPath) {
+    const container = document.getElementById(containerId);
+    if (!container) {
+        return;
+    }
+
     let slideIndex = 1;
     let slidesData = [];
     let autoPlayTimer = null;
-    const AUTO_PLAY_DELAY = 10000; // Change this to your preferred threshold (ms)
+    const AUTO_PLAY_DELAY = 15000; // Change this to your preferred threshold (ms)
 
-    const container = document.getElementById(containerId);
     const wrapper = container.querySelector(".slides-wrapper");
     const caption = container.querySelector(".caption-container");
     const prevBtn = container.querySelector(".prev");
@@ -25,9 +29,20 @@ function initSlideshow(containerId, jsonPath) {
             const slideDiv = document.createElement("div");
             slideDiv.className = "slide fade";
 
-            const img = document.createElement("img");
-            img.src = slide.src;
-            slideDiv.appendChild(img);
+            let mediaElement;
+            // Check if the source string ends with .mp4 (case insensitive)
+            if (slide.src.toLowerCase().endsWith(".mp4")) {
+                mediaElement = document.createElement("video");
+                mediaElement.autoplay = true;
+                mediaElement.loop = true;
+                mediaElement.muted = true;    // Required for autoplay in Chrome
+                mediaElement.playsInline = true; // Required for iOS
+            } else {
+                mediaElement = document.createElement("img");
+            }
+
+            mediaElement.src = slide.src;
+            slideDiv.appendChild(mediaElement);
 
             wrapper.appendChild(slideDiv);
         });
@@ -94,5 +109,7 @@ function initSlideshow(containerId, jsonPath) {
 }
 
 // Initialize both slideshows
-initSlideshow("slideshow1", "../assets/ac_thrust/theory.json");
-initSlideshow("slideshow2", "../assets/ac_thrust/test_stand.json");
+initSlideshow("ac_slideshow1", "../assets/ac_thrust/theory.json");
+initSlideshow("ac_slideshow2", "../assets/ac_thrust/test_stand.json");
+initSlideshow("wd_slideshow1", "../assets/wireless_drone/sim.json");
+initSlideshow("wd_slideshow2", "../assets/wireless_drone/flight.json");
