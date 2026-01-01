@@ -77,7 +77,7 @@
                 </p>
                 <p>
                     Stability is achieved through a quadcopter configuration and the geometry of the magnetic field. The
-                    transmitter creates a 'magnetic well' with a position-dependent power gradient. When the drone
+                    transmitter creates a 'magnetic well' which has a position-dependent power gradient. When the drone
                     drifts, the coil entering the stronger field region generates more thrust, creating a restoring
                     torque that naturally pushes the drone back to equilibrium.
                 </p>
@@ -92,8 +92,8 @@
                         framework</a> established, simulations were conducted to explore the complex dynamics
                     and coupling within the system. A Python-based <a
                         href="https://colab.research.google.com/drive/1K0rN9cA1kPFtgaQ2_YyLcx6EvbavrGgu?usp=sharing"
-                        target="_blank">LTI model</a> was created to analyze how variations in coupling, due to flight
-                    dynamics, impacts power transfer and resonance stability. The system's sensitivity to the RX load
+                        target="_blank">LTI model</a> was created to analyze how variations in coupling due to flight
+                    dynamics impacts power transfer and resonance stability. The system's sensitivity to the RX load
                     was also explored.
                 </p>
                 <p>
@@ -123,9 +123,8 @@
                 <h2>Test Stand</h2>
                 <p>
                     The simulations demonstrated a strong dependence on the RX load, so given the
-                    complexity of modelling a motor, a shift towards rapid <i>physical</i>
-                    prototyping was necessary. A custom <a
-                        href="https://cad.onshape.com/documents/52908b6077309f2cc22d65d3/w/fbede0d85f8dc4509e971759/e/43488f6091f48dededc9a839?renderMode=0&uiState=69561fe6246c3bf70829dc18"
+                    complexity of modelling a motor, a shift towards rapid physical prototyping was necessary. A custom
+                    <a href="https://cad.onshape.com/documents/52908b6077309f2cc22d65d3/w/fbede0d85f8dc4509e971759/e/43488f6091f48dededc9a839?renderMode=0&uiState=69561fe6246c3bf70829dc18"
                         target="_blank">test stand</a> was designed and 3D-printed to empirically
                     characterize the system. It features a modular mounting system to fix an RX coil at precise
                     coordinates, enabling measurements with fixed amounts of coupling.
@@ -142,9 +141,9 @@
                 <h2>Current Status</h2>
                 <p>
                     Experiments have been conducted to characterize the RX coils under various circuit topologies,
-                    validating simulated predictions of frequency response stability. Additionally, system level
+                    validating the resonance stability predicted by the simulation. Additionally, system level
                     testing has identified that tuning the operating frequency is the primary driver for maximizing
-                    power transfer. All data and analysis are available in the <a
+                    power transfer. All data and analysis is available in the <a
                         href="https://github.com/davisgtoth/Wireless-Drone-Data-Analysis" target="_blank">project
                         repository</a>.
                 </p>
