@@ -1,4 +1,4 @@
-function initSlideshow(containerId, jsonPath) {
+function initSlideshow(containerId, jsonPath, enableAutoplay = true) {
     const container = document.getElementById(containerId);
     if (!container) {
         return;
@@ -7,7 +7,7 @@ function initSlideshow(containerId, jsonPath) {
     let slideIndex = 1;
     let slidesData = [];
     let autoPlayTimer = null;
-    const AUTO_PLAY_DELAY = 20000; // Change this to your preferred threshold (ms)
+    const AUTO_PLAY_DELAY = 15000; // Change this to your preferred threshold (ms)
 
     const wrapper = container.querySelector(".slides-wrapper");
     const caption = container.querySelector(".caption-container");
@@ -22,6 +22,10 @@ function initSlideshow(containerId, jsonPath) {
             buildSlides();
             showSlides(slideIndex);
             setupObserver();
+
+            if (enableAutoplay) {
+                setupObserver();
+            }
         });
 
     function buildSlides() {
@@ -65,11 +69,13 @@ function initSlideshow(containerId, jsonPath) {
 
     function plusSlides(n) {
         showSlides(slideIndex += n);
-        resetTimer();
+        if (enableAutoplay) {
+            resetTimer();
+        }
     }
 
     function startTimer() {
-        if (!autoPlayTimer) {
+        if (enableAutoplay && !autoPlayTimer) {
             autoPlayTimer = setInterval(() => {
                 plusSlides(1);
             }, AUTO_PLAY_DELAY);
@@ -77,8 +83,10 @@ function initSlideshow(containerId, jsonPath) {
     }
 
     function stopTimer() {
-        clearInterval(autoPlayTimer);
-        autoPlayTimer = null;
+        if (autoPlayTimer) {
+            clearInterval(autoPlayTimer);
+            autoPlayTimer = null;
+        }
     }
 
     function resetTimer() {
@@ -104,12 +112,14 @@ function initSlideshow(containerId, jsonPath) {
     prevBtn.addEventListener("click", () => plusSlides(-1));
     nextBtn.addEventListener("click", () => plusSlides(1));
 
-    container.addEventListener("mouseenter", stopTimer);
-    container.addEventListener("mouseleave", startTimer);
+    if (enableAutoplay) {
+        container.addEventListener("mouseenter", stopTimer);
+        container.addEventListener("mouseleave", startTimer);
+    }
 }
 
 // Initialize both slideshows
 initSlideshow("ac_slideshow1", "../assets/ac_thrust/theory.json");
 initSlideshow("ac_slideshow2", "../assets/ac_thrust/test_stand.json");
 initSlideshow("wd_slideshow1", "../assets/wireless_drone/sim.json");
-initSlideshow("wd_slideshow2", "../assets/wireless_drone/flight.json");
+initSlideshow("wd_slideshow2", "../assets/wireless_drone/flight.json", false);
