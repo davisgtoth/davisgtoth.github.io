@@ -1,0 +1,76 @@
+[
+    {
+        "title": "Ex. 1: Road PID",
+        "frames": [
+            {
+                "src": "../assets/353/road1/img1.jpg",
+                "caption": "Threshold for white road lines"
+            },
+            {
+                "src": "../assets/353/road1/img2.jpg",
+                "caption": "Threshold for white road lines"
+            },
+            {
+                "src": "../assets/353/road1/img3.jpg",
+                "caption": "At buffer above bottom, find left and rightmost white points"
+            },
+            {
+                "src": "../assets/353/road1/img4.jpg",
+                "caption": "At buffer above bottom, find left and rightmost white points"
+            },
+            {
+                "src": "../assets/353/road1/img5.jpg",
+                "caption": "At buffer above bottom, find left and rightmost white points"
+            },
+            {
+                "src": "../assets/353/road1/img6.jpg",
+                "caption": "Calculate middle of road and compare against centre of screen for error"
+            },
+            {
+                "src": "../assets/353/road1/img7.jpg",
+                "caption": "Calculate middle of road and compare against centre of screen for error"
+            },
+            {
+                "src": "../assets/353/road1/img8.jpg",
+                "caption": "Calculate middle of road and compare against centre of screen for error"
+            }
+        ]
+    },
+    {
+        "title": "Ex. 2: Road PID (one line edge case)",
+        "frames": [
+            {
+                "src": "../assets/353/road2/img1.jpg",
+                "caption": "Threshold for white road lines"
+            },
+            {
+                "src": "../assets/353/road2/img2.jpg",
+                "caption": "Threshold for white road lines"
+            },
+            {
+                "src": "../assets/353/road2/img3.jpg",
+                "caption": "At buffer above bottom, find left and rightmost white points"
+            },
+            {
+                "src": "../assets/353/road2/img4.jpg",
+                "caption": "At buffer above bottom, find left and rightmost white points"
+            },
+            {
+                "src": "../assets/353/road2/img5.jpg",
+                "caption": "At buffer above bottom, find left and rightmost white points"
+            },
+            {
+                "src": "../assets/353/road2/img6.jpg",
+                "caption": "Calculate middle of road and compare against centre of screen for error"
+            },
+            {
+                "src": "../assets/353/road2/img7.jpg",
+                "caption": "Calculate middle of road and compare against centre of screen for error"
+            },
+            {
+                "src": "../assets/353/road2/img8.jpg",
+                "caption": "Calculate middle of road and compare against centre of screen for error"
+            }
+        ]
+    }
+]

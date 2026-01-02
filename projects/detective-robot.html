@@ -23,8 +23,8 @@
                 <div class="dropdown-content">
                     <a href="../projects/wireless-drone.html">wireless_drone/</a>
                     <a href="../projects/ac-ionic-thruster.html">ac_ionic_thruster/</a>
-                    <a href="../projects/mario-kart-robot.html">mario_kart_robot/</a>
                     <a href="../projects/detective-robot.html">detective_robot/</a>
+                    <a href="../projects/mario-kart-robot.html">mario_kart_robot/</a>
                     <a href="../projects/assembly-clock.html">assembly_clock/</a>
                 </div>
             </div>
@@ -32,113 +32,107 @@
         </div>
     </div>
 
-    <section class="content-section" id="detective-robot">
-        <h3>detective_robot/</h3>
-        <p>> cat description.txt</p>
-        <p>A robot programmed to navigate a virtual obstacle course and solve a crime</p>
-        <br>
-        <p>> open road_pid*.gif</p>
-        <div class="image-sequence-container">
-            <div class="image-sequence">
-                <img src="../assets/353/road1/img1.jpg" alt="road1_image1" class="active">
-                <img src="../assets/353/road1/img2.jpg" alt="road1_image2">
-                <img src="../assets/353/road1/img3.jpg" alt="road1_image3">
-                <img src="../assets/353/road1/img4.jpg" alt="road1_image4">
-                <img src="../assets/353/road1/img5.jpg" alt="road1_image5">
-                <img src="../assets/353/road1/img6.jpg" alt="road1_image6">
-                <img src="../assets/353/road1/img7.jpg" alt="road1_image7">
-                <img src="../assets/353/road1/img8.jpg" alt="road1_image8">
-            </div>
-            <div class="image-sequence">
-                <img src="../assets/353/road2/img1.jpg" alt="road2_image1" class="active">
-                <img src="../assets/353/road2/img2.jpg" alt="road2_image2">
-                <img src="../assets/353/road2/img3.jpg" alt="road2_image3">
-                <img src="../assets/353/road2/img4.jpg" alt="road2_image4">
-                <img src="../assets/353/road2/img5.jpg" alt="road2_image5">
-                <img src="../assets/353/road2/img6.jpg" alt="road2_image6">
-                <img src="../assets/353/road2/img7.jpg" alt="road2_image7">
-                <img src="../assets/353/road2/img8.jpg" alt="road2_image8">
-            </div>
+    <main class="project-page">
+        <div class="project-hero">
+            <h3 class="hero-title">
+                <span id="typed-text"></span><span class="cursor"></span>
+            </h3>
+            <img src="../assets/353/hero.jpg" alt="detective-robot-hero" class="hero-image" />
+            <div class="scroll-arrow" id="scrollArrow"></div>
         </div>
-        <div class="caption" id="image-caption-1">threshold for white road lines</div>
-        <br>
-        <p>> open desert_pid*.gif</p>
-        <div class="image-sequence-container">
-            <div class="image-sequence">
-                <img src="../assets/353/desert1/img1.jpg" alt="desert1_image1" class="active">
-                <img src="../assets/353/desert1/img2.jpg" alt="desert1_image2">
-                <img src="../assets/353/desert1/img3.jpg" alt="desert1_image3">
-                <img src="../assets/353/desert1/img4.jpg" alt="desert1_image4">
-                <img src="../assets/353/desert1/img5.jpg" alt="desert1_image5">
-                <img src="../assets/353/desert1/img6.jpg" alt="desert1_image6">
-                <img src="../assets/353/desert1/img7.jpg" alt="desert1_image7">
-                <img src="../assets/353/desert1/img8.jpg" alt="desert1_image8">
+
+        <section class="project-section">
+            <div class="project-text">
+                <h2>Objective</h2>
+                <p>
+                    The goal was to build a detective, not just a robot. This project involved programming a fully
+                    autonomous agent within a Gazebo simulation to crack a mystery. Interfacing via ROS and scripted in
+                    Python, the robot had to navigate a complex map, autonomously dodging traffic and NPCs
+                    (including Baby Yoda), while hunting for clues. Success relied on devising robust control
+                    algorithms to maneuver the map without collisions, while simultaneously deciphering the clues.
+                </p>
             </div>
-            <div class="image-sequence">
-                <img src="../assets/353/desert2/img1.jpg" alt="desert2_image1" class="active">
-                <img src="../assets/353/desert2/img2.jpg" alt="desert2_image2">
-                <img src="../assets/353/desert2/img3.jpg" alt="desert2_image3">
-                <img src="../assets/353/desert2/img4.jpg" alt="desert2_image4">
-                <img src="../assets/353/desert2/img5.jpg" alt="desert2_image5">
-                <img src="../assets/353/desert2/img6.jpg" alt="desert2_image6">
-                <img src="../assets/353/desert2/img7.jpg" alt="desert2_image7">
-                <img src="../assets/353/desert2/img8.jpg" alt="desert2_image8">
+            <div class="project-image">
+                <figure>
+                    <img src="../assets/353/objective.png" alt="Obstacle Course Overview">
+                    <figcaption>Obstacle Course Overview</figcaption>
+                </figure>
             </div>
-        </div>
-        <div class="caption" id="image-caption-2">threshold for white road lines</div>
-        <br>
-        <p>> open sign_crop*.gif</p>
-        <div class="image-sequence-container">
-            <div class="image-sequence">
-                <img src="../assets/353/sign1/img1.jpg" alt="sign1_image1" class="active">
-                <img src="../assets/353/sign1/img2.jpg" alt="sign1_image2">
-                <img src="../assets/353/sign1/img3.jpg" alt="sign1_image3">
-                <img src="../assets/353/sign1/img4.jpg" alt="sign1_image4">
-                <img src="../assets/353/sign1/img5.jpg" alt="sign1_image5">
-                <img src="../assets/353/sign1/img6.jpg" alt="sign1_image6">
-                <img src="../assets/353/sign1/img7.jpg" alt="sign1_image7">
-                <img src="../assets/353/sign1/img8.jpg" alt="sign1_image8">
-                <img src="../assets/353/sign1/img9.jpg" alt="sign1_image9">
+        </section>
+
+        <section class="project-section reverse-mobile">
+            <div class="slideshow-container" id="road-player">
+                <div class="slides-wrapper">
+                    <img class="slide-img" src="" alt="Algorithm Step">
+                    <a class="prev">❮</a>
+                    <a class="next">❯</a>
+                </div>
+                <div class="caption-container"></div>
             </div>
-            <div class="image-sequence">
-                <img src="../assets/353/sign2/img1.jpg" alt="sign2_image1" class="active">
-                <img src="../assets/353/sign2/img2.jpg" alt="sign2_image2">
-                <img src="../assets/353/sign2/img3.jpg" alt="sign2_image3">
-                <img src="../assets/353/sign2/img4.jpg" alt="sign2_image4">
-                <img src="../assets/353/sign2/img5.jpg" alt="sign2_image5">
-                <img src="../assets/353/sign2/img6.jpg" alt="sign2_image6">
-                <img src="../assets/353/sign2/img7.jpg" alt="sign2_image7">
-                <img src="../assets/353/sign2/img8.jpg" alt="sign2_image8">
-                <img src="../assets/353/sign2/img9.jpg" alt="sign2_image9">
+            <div class="project-text">
+                <h2>Software Architecture</h2>
+                <p>
+                    The system is architected around a central finite state machine that dictates the robot's
+                    behavior. This structure allows the agent to deploy specialized algorithms to handle the distinct
+                    challenges presented by varied road, desert and mountain terrains, as well as the dynamic NPCs.
+                </p>
+                <p>
+                    Navigation relies on reading the robot's live camera feed and publishing real-time steering commands
+                    via ROS. Using this visual feedback, state-specific PID control loops and computer vision
+                    algorithms are used to maneuver the robot. In parallel, a dedicated pipeline uses machine
+                    learning to extract alphanumeric characters from detected clue boards.
+                </p>
             </div>
-        </div>
-        <div class="caption" id="image-caption-3">threshold for the sign in two ways, logical AND the results</div>
-        <br>
-        <p>> open demo*.gif</p>
-        <div class="gif-container">
-            <img src="../assets/353/pov.gif" alt="pov-gif" class="gif-353" />
-            <img src="../assets/353/map.gif" alt="map-gif" class="gif-353" />
-        </div>
-        <div class="caption" id="353-gif-caption">watch the demo video below for more!</div>
-        <br>
-        <p>> ls links/</p>
-        <p>
-            <a href="https://drive.google.com/file/d/10dJ2QrjZod7UEyLq2d78IsoToaAfe3H6/view?usp=share_link"
-                target="_blank">demo_video.mp4</a>
-            <a href="https://github.com/brooklynnae/BRODA_enph353.git" target="_blank">source_code.github</a>
-        </p>
-        <br>
-        <p class="command">> cat project.rpt</p>
-        <div class="hidden-content">
-            <p>
-                This project was a deep dive into computer vision and control systems, along with some machine
-                learning.
-            </p>
-            <p>
-                To be completed...
-            </p>
-        </div>
-    </section>
+        </section>
+
+        <section class="project-section">
+            <div class="project-text">
+                <h2>Computer Vision</h2>
+                <p>
+                    To navigate the diverse map, the robot employed adaptive image processing techniques using OpenCV.
+                    In high-contrast areas like the road, HSV color filtering effectively isolated the white lane
+                    markings. The desert and mountain regions required a more robust approach, layering contour
+                    detection and filtering over HSV masks to extract faint path boundaries.
+                </p>
+                <p>
+                    When detected, visual markers triggered transitions between environmental states, while dynamic
+                    obstacles were managed via background subtraction. By filtering the static background to isolate the
+                    pedestrian and truck, the robot could precisely localize these NPCs and execute the necessary
+                    avoidance maneuvers.
+                </p>
+            </div>
+            <div class="slideshow-container" id="desert-player">
+                <div class="slides-wrapper">
+                    <img class="slide-img" src="" alt="Algorithm Step">
+                    <a class="prev">❮</a>
+                    <a class="next">❯</a>
+                </div>
+                <div class="caption-container"></div>
+            </div>
+        </section>
+
+        <section class="project-section reverse-mobile">
+            <div class="slideshow-container" id="sign-player">
+                <div class="slides-wrapper">
+                    <img class="slide-img" src="" alt="Algorithm Step">
+                    <a class="prev">❮</a>
+                    <a class="next">❯</a>
+                </div>
+                <div class="caption-container"></div>
+            </div>
+            <div class="project-text">
+                <h2>Clue Detection</h2>
+                <p>
+                    Mirroring the navigation framework, composite color masking and contour analysis
+                    were used to isolate clue boards from the colourful backgrounds. Once a target was identified, the
+                    image was segmented into individual characters and passed to a custom convolutional neural network
+                    built with TensorFlow. Trained on a generated dataset, this deep learning model mapped raw pixel
+                    data directly to alphanumeric text to solve the mystery.
+                </p>
+            </div>
+        </section>
+
+    </main>
 
     <br>
     <div class="bottom-spacer-top"></div>
@@ -147,8 +141,26 @@
     <div class="bottom-spacer-bottom"></div>
     <br>
 
-    <script src="../javascript/gif.js"></script>
-    <script src="../javascript/commands.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const text = "detective_robot/";   // the text to type
+            const typedText = document.getElementById("typed-text");
+            let index = 0;
+
+            function typeChar() {
+                if (index < text.length) {
+                    typedText.textContent += text.charAt(index);
+                    index++;
+                    setTimeout(typeChar, 120);  // typing speed (ms per character)
+                }
+            }
+
+            typeChar();
+        });
+    </script>
+
+    <script src="../javascript/scroll-indicator.js"></script>
+    <script src="../javascript/scenario-player.js"></script>
 
 </body>
 

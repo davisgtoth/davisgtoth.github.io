@@ -1,0 +1,84 @@
+[
+    {
+        "title": "Ex. 5: Clue Board Detection",
+        "frames": [
+            {
+                "src": "../assets/353/sign1/img1.jpg",
+                "caption": "Threshold for sign in two ways, logical AND the results"
+            },
+            {
+                "src": "../assets/353/sign1/img2.jpg",
+                "caption": "Threshold for sign in two ways, logical AND the results"
+            },
+            {
+                "src": "../assets/353/sign1/img3.jpg",
+                "caption": "Threshold for sign in two ways, logical AND the results"
+            },
+            {
+                "src": "../assets/353/sign1/img4.jpg",
+                "caption": "Threshold for sign in two ways, logical AND the results"
+            },
+            {
+                "src": "../assets/353/sign1/img5.jpg",
+                "caption": "Filter for the biggest contour"
+            },
+            {
+                "src": "../assets/353/sign1/img6.jpg",
+                "caption": "Filter for the biggest contour"
+            },
+            {
+                "src": "../assets/353/sign1/img7.jpg",
+                "caption": "Find the corners, crop, and perspective transform"
+            },
+            {
+                "src": "../assets/353/sign1/img8.jpg",
+                "caption": "Find the corners, crop, and perspective transform"
+            },
+            {
+                "src": "../assets/353/sign1/img9.jpg",
+                "caption": "Find the corners, crop, and perspective transform"
+            }
+        ]
+    },
+    {
+        "title": "Ex. 6: Clue Board Detection",
+        "frames": [
+            {
+                "src": "../assets/353/sign2/img1.jpg",
+                "caption": "Threshold for sign in two ways, logical AND the results"
+            },
+            {
+                "src": "../assets/353/sign2/img2.jpg",
+                "caption": "Threshold for sign in two ways, logical AND the results"
+            },
+            {
+                "src": "../assets/353/sign2/img3.jpg",
+                "caption": "Threshold for sign in two ways, logical AND the results"
+            },
+            {
+                "src": "../assets/353/sign2/img4.jpg",
+                "caption": "Threshold for sign in two ways, logical AND the results"
+            },
+            {
+                "src": "../assets/353/sign2/img5.jpg",
+                "caption": "Filter for the biggest contour"
+            },
+            {
+                "src": "../assets/353/sign2/img6.jpg",
+                "caption": "Filter for the biggest contour"
+            },
+            {
+                "src": "../assets/353/sign2/img7.jpg",
+                "caption": "Find the corners, crop, and perspective transform"
+            },
+            {
+                "src": "../assets/353/sign2/img8.jpg",
+                "caption": "Find the corners, crop, and perspective transform"
+            },
+            {
+                "src": "../assets/353/sign2/img9.jpg",
+                "caption": "Find the corners, crop, and perspective transform"
+            }
+        ]
+    }
+]

@@ -1,0 +1,76 @@
+[
+    {
+        "title": "Ex. 3: Desert PID",
+        "frames": [
+            {
+                "src": "../assets/353/desert1/img1.jpg",
+                "caption": "Threshold for white road lines"
+            },
+            {
+                "src": "../assets/353/desert1/img2.jpg",
+                "caption": "Threshold for white road lines"
+            },
+            {
+                "src": "../assets/353/desert1/img3.jpg",
+                "caption": "Find contours, filter by arc length and height"
+            },
+            {
+                "src": "../assets/353/desert1/img4.jpg",
+                "caption": "Find contours, filter by arc length and height"
+            },
+            {
+                "src": "../assets/353/desert1/img5.jpg",
+                "caption": "Write remaining contours to blank image"
+            },
+            {
+                "src": "../assets/353/desert1/img6.jpg",
+                "caption": "Write remaining contours to blank image"
+            },
+            {
+                "src": "../assets/353/desert1/img7.jpg",
+                "caption": "Find edge points, centre, and calculate error"
+            },
+            {
+                "src": "../assets/353/desert1/img8.jpg",
+                "caption": "Find edge points, centre, and calculate error"
+            }
+        ]
+    },
+    {
+        "title": "Ex. 4: Desert PID",
+        "frames": [
+            {
+                "src": "../assets/353/desert2/img1.jpg",
+                "caption": "Threshold for white road lines"
+            },
+            {
+                "src": "../assets/353/desert2/img2.jpg",
+                "caption": "Threshold for white road lines"
+            },
+            {
+                "src": "../assets/353/desert2/img3.jpg",
+                "caption": "Find contours, filter by arc length and height"
+            },
+            {
+                "src": "../assets/353/desert2/img4.jpg",
+                "caption": "Find contours, filter by arc length and height"
+            },
+            {
+                "src": "../assets/353/desert2/img5.jpg",
+                "caption": "Write remaining contours to blank image"
+            },
+            {
+                "src": "../assets/353/desert2/img6.jpg",
+                "caption": "Write remaining contours to blank image"
+            },
+            {
+                "src": "../assets/353/desert2/img7.jpg",
+                "caption": "Find edge points, centre, and calculate error"
+            },
+            {
+                "src": "../assets/353/desert2/img8.jpg",
+                "caption": "Find edge points, centre, and calculate error"
+            }
+        ]
+    }
+]
