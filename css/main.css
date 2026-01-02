@@ -383,6 +383,15 @@ p.footnote {
     filter: brightness(0.7);
 }
 
+/* Update selector to target both img and video */
+.project-hero .hero-media {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.7);
+    display: block;
+}
+
 /* Overlay terminal-style title */
 .project-hero .hero-title {
     position: absolute;
@@ -625,4 +634,54 @@ p.footnote {
     font-family: 'Courier New', Courier, monospace;
     color: #808080;
     margin-right: 3px;
+}
+
+/* === Final Video Section (Cinema Layout) === */
+.video-section {
+    flex-direction: column;
+    text-align: center;
+}
+
+.video-section .project-text {
+    max-width: 800px;
+    margin-bottom: 0rem;
+}
+
+/* The Outer Box (Controls Width) */
+.video-container {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    border-radius: 10px;
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+}
+
+.video-wrapper {
+    position: relative;
+    /* 977 / 1606 = 0.6083 */
+    padding-bottom: 60.83%;
+    height: 0;
+}
+
+.video-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* Remove the default paragraph margin just for the video section */
+.video-section .project-text p {
+    margin-bottom: 0rem;
+    /* Tweak this number (e.g., 0.2rem) to get it perfect */
+}
+
+/* === Final Video Section (Cinema Layout) === */
+.video-section {
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+    /* <--- ADD THIS. It overrides the default 3rem gap. */
 }

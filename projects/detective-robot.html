@@ -37,7 +37,10 @@
             <h3 class="hero-title">
                 <span id="typed-text"></span><span class="cursor"></span>
             </h3>
-            <img src="../assets/353/hero.jpg" alt="detective-robot-hero" class="hero-image" />
+            <video class="hero-media" autoplay muted loop playsinline poster="../assets/353/hero.jpg">
+                <source src="../assets/353/hero_clip.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
             <div class="scroll-arrow" id="scrollArrow"></div>
         </div>
 
@@ -46,10 +49,11 @@
                 <h2>Objective</h2>
                 <p>
                     The goal was to build a detective, not just a robot. This project involved programming a fully
-                    autonomous agent within a Gazebo simulation to crack a mystery. Interfacing via ROS and scripted in
-                    Python, the robot had to navigate a complex map, autonomously dodging traffic and NPCs
-                    (including Baby Yoda), while hunting for clues. Success relied on devising robust control
-                    algorithms to maneuver the map without collisions, while simultaneously deciphering the clues.
+                    autonomous agent within a Gazebo simulation to crack a mystery. Developed in a Linux environment,
+                    interfacing via ROS and scripted in Python, the robot had to navigate a complex map, autonomously
+                    dodging traffic and NPCs (including Baby Yoda!), while hunting for clues. Success relied on devising
+                    robust control algorithms to maneuver the map without collisions, while simultaneously deciphering
+                    clues.
                 </p>
             </div>
             <div class="project-image">
@@ -92,13 +96,13 @@
                     To navigate the diverse map, the robot employed adaptive image processing techniques using OpenCV.
                     In high-contrast areas like the road, HSV color filtering effectively isolated the white lane
                     markings. The desert and mountain regions required a more robust approach, layering contour
-                    detection and filtering over HSV masks to extract faint path boundaries.
+                    detection and filtering after HSV masks to extract faint path boundaries.
                 </p>
                 <p>
-                    When detected, visual markers triggered transitions between environmental states, while dynamic
-                    obstacles were managed via background subtraction. By filtering the static background to isolate the
-                    pedestrian and truck, the robot could precisely localize these NPCs and execute the necessary
-                    avoidance maneuvers.
+                    When detected, distinct visual markers triggered transitions between environmental states, while
+                    dynamic obstacles were managed via background subtraction. By filtering the static background to
+                    isolate the pedestrian and truck, the robot could precisely localize these NPCs and execute the
+                    necessary avoidance maneuvers.
                 </p>
             </div>
             <div class="slideshow-container" id="desert-player">
@@ -130,6 +134,45 @@
                     data directly to alphanumeric text to solve the mystery.
                 </p>
             </div>
+        </section>
+
+        <section class="project-section video-section">
+            <div class="project-text centered-text">
+                <h2>Case Closed</h2>
+                <p>
+                    Watch the full autonomous run below to see the robot navigate through the entire course!
+                </p>
+            </div>
+
+            <div class="video-container">
+                <div class="video-wrapper">
+                    <iframe src="https://www.youtube.com/embed/KKQEBZ_tPzc" title="Detective Robot Demonstration"
+                        frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen>
+                    </iframe>
+                </div>
+            </div>
+        </section>
+
+        <section class="project-section resources-section">
+            <div class="project-text">
+                <h2>Resources</h2>
+                <ul class="resource-list">
+                    <li>
+                        <a href="https://github.com/brooklynnae/BRODA_enph353" target="_blank">source_code.py</a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/davisgtoth/broda_data" target="_blank">data_collection/</a>
+                    </li>
+                    <li>
+                        <a href="https://docs.google.com/document/d/1lIr0DIiiIhA6k2XXk26dAM6Z52fce9OGYzp9jR6H_Ew/edit?usp=sharing"
+                            target="_blank">final_report.pdf</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="project-image" style="visibility: hidden; height: 0;"></div>
         </section>
 
     </main>
