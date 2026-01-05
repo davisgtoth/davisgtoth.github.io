@@ -647,7 +647,6 @@ p.footnote {
     margin-bottom: 0rem;
 }
 
-/* The Outer Box (Controls Width) */
 .video-container {
     width: 100%;
     max-width: 900px;
@@ -659,7 +658,6 @@ p.footnote {
 
 .video-wrapper {
     position: relative;
-    /* 977 / 1606 = 0.6083 */
     padding-bottom: 60.83%;
     height: 0;
 }
@@ -672,16 +670,18 @@ p.footnote {
     height: 100%;
 }
 
-/* Remove the default paragraph margin just for the video section */
 .video-section .project-text p {
     margin-bottom: 0rem;
-    /* Tweak this number (e.g., 0.2rem) to get it perfect */
 }
 
-/* === Final Video Section (Cinema Layout) === */
 .video-section {
     flex-direction: column;
     text-align: center;
     gap: 1rem;
-    /* <--- ADD THIS. It overrides the default 3rem gap. */
+}
+
+/* Standard 16:9 Widescreen Video Modifier */
+.video-wrapper.standard-ratio {
+    padding-bottom: 56.25%;
+    /* 9 / 16 = 0.5625 */
 }

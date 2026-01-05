@@ -22,9 +22,9 @@
                 <a href="../index.html#projects">projects</a>
                 <div class="dropdown-content">
                     <a href="../projects/wireless-drone.html">wireless_drone/</a>
-                    <a href="../projects/ac-ionic-thruster.html">ac_ionic_thruster/</a>
                     <a href="../projects/detective-robot.html">detective_robot/</a>
                     <a href="../projects/mario-kart-robot.html">mario_kart_robot/</a>
+                    <a href="../projects/ac-ionic-thruster.html">ac_ionic_thruster/</a>
                     <a href="../projects/assembly-clock.html">assembly_clock/</a>
                 </div>
             </div>
@@ -32,47 +32,229 @@
         </div>
     </div>
 
-    <section class="content-section" id="mario-kart-robot">
-        <h3>mario_kart_robot/</h3>
-        <p>> cat description.txt</p>
-        <p>
-            An autonomous robot built from scratch to race in a Mario Kart themed competition
-        </p>
-        <br>
-        <p>> open *.png</p>
-        <div class="image-container">
-            <img src="../assets/253/image1.png" alt="mario_robot_image1">
-            <img src="../assets/253/image3.png" alt="mario_robot_image3">
-            <img src="../assets/253/image2.png" alt="mario_robot_image2">
-            <img src="../assets/253/image4.png" alt="mario_robot_image4">
-            <img src="../assets/253/image5.png" alt="mario_robot_image5">
+    <main class="project-page">
+        <div class="project-hero">
+            <h3 class="hero-title">
+                <span id="typed-text"></span><span class="cursor"></span>
+            </h3>
+            <video class="hero-media" autoplay muted loop playsinline poster="../assets/253/hero_poster.jpg">
+                <source src="../assets/253/hero_clip.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="scroll-arrow" id="scrollArrow"></div>
         </div>
-        <br>
-        <p>> open *.gif</p>
-        <div class="gif-container">
-            <img src="../assets/253/tape.gif" alt="tape-gif" class="gif-253" />
-            <img src="../assets/253/zipline.gif" alt="zipline-gif" class="gif-253" />
-            <img src="../assets/253/objects.gif" alt="objects-gif" class="gif-253" />
-        </div>
-        <div class="caption" id="253-gif-caption">watch the competition video below for more!</div>
-        <br>
-        <p>> ls links/</p>
-        <p>
-            <a href="https://drive.google.com/file/d/1w6-7t8ydU0or7luZHDUsF-WXsSLSsT3a/view?usp=share_link"
-                target="_blank">competition_video.mp4</a>
-            <a href="https://cad.onshape.com/documents/bb7dcfccabe3497275c493e6/w/af5099d192e8e4b0dffb7119/e/1694ee9cc88bf6efe85e1a26?renderMode=0&uiState=670229a10cfcd85cc1702df6"
-                target="_blank">cad_model.onshape</a>
-            <a href="https://github.com/josheuchert/ROBERTOBOT" target="_blank">source_code.github</a>
-        </p>
-        <br>
-        <p>For a detailed breakdown of the project, read the report below!</p>
-        <p class="command">> open project.rpt</p>
-        <div class="hidden-content">
-            <div class="pdf-container">
-                <iframe src="../assets/253/report.pdf" title="Mario Kart Robot Report" frameborder="0"></iframe>
+
+        <section class="project-section">
+            <div class="project-text">
+                <h2>The Competition</h2>
+                <p>
+                    For the annual Engineering Physics Robot Competition, in groups of four, we were tasked with
+                    building a fully autonomous robot in just six weeks. Themed after Mario Kart, the challenge
+                    required the robot to navigate a "Rainbow Road" circuit complete with shortcuts, competing
+                    head-to-head against an opponent.
+                </p>
+                <p>
+                    The objective was to maximize our score within a strict time limit. Points were earned by
+                    completing laps, retrieving item boxes, and collecting coins hung on a zipline, while avoiding
+                    point-deducting "bombs". Beyond the course itself, the robot faced the added complexity of a dynamic
+                    opponent, forcing it to actively avoid collisions while dodging "bananas" and additional bombs
+                    dropped to sabotage the track.
+                </p>
             </div>
-        </div>
-    </section>
+
+            <div class="project-image">
+                <figure>
+                    <img src="../assets/253/competition.png" alt="Competition Surface">
+                    <figcaption>Competition Surface</figcaption>
+                </figure>
+            </div>
+        </section>
+
+        <section class="project-section reverse-mobile">
+            <div class="slideshow-container" id="mario_slideshow1">
+                <div class="slides-wrapper">
+                    <a class="prev">❮</a>
+                    <a class="next">❯</a>
+                </div>
+                <div class="caption-container"></div>
+            </div>
+
+            <div class="project-text">
+                <h2>System Overview</h2>
+                <p>
+                    Meet R.O.B.erto, a custom-built autonomous racer designed to dominate the Rainbow Road. Capable of
+                    precise tape following, active bomb avoidance, and item retrieval, the robot features a specialized
+                    mechanism to autonomously mount and ride the zipline to gather the coins. R.O.B.erto was the only
+                    robot in the entire 16-team competition to successfully complete this complex aerial challenge.
+                </p>
+                <p>
+                    At the core of the system is an STM32 microcontroller acting as the mastermind, executing <a
+                        href="https://github.com/josheuchert/ROBERTOBOT" target="_blank">C++ firmware</a> to control all
+                    logic and behavior. The architecture utilizes an interrupt-driven design to handle real-time sensor
+                    data from sonars and encoders. To drive the motors, we designed and soldered custom H-bridge PCBs
+                    using discrete MOSFETs. Special attention was given to electrical routing to minimize
+                    electromagnetic interference, ensuring that high-current motor noise never corrupted the delicate
+                    signals from any of the sensors.
+                </p>
+            </div>
+        </section>
+
+        <section class="project-section">
+            <div class="project-text">
+                <h2>Mechanical Design</h2>
+                <p>
+                    As mechanical lead, I designed a custom laser-cut <a
+                        href="https://cad.onshape.com/documents/bb7dcfccabe3497275c493e6/w/af5099d192e8e4b0dffb7119/e/1694ee9cc88bf6efe85e1a26?renderMode=0&uiState=670229a10cfcd85cc1702df6"
+                        target="_blank">hardboard chassis</a> utilizing press-fit joinery to ensure structural rigidity
+                    without the use of excessive fasteners. To withstand the rough journey around the course, I
+                    integrated 3D-printed mounts that securely positioned the electronics and sensors. The chassis was
+                    engineered to efficiently house the motors, batteries, and a cargo bay for collected items, all
+                    while adhering to strict size constraints required to navigate the track. Crucially, the frame was
+                    reinforced to support the robot's entire weight during the high-stress zipline descent. To complete
+                    the race-ready look, the exterior was finished with custom "sponsorship" decals, giving R.O.B.erto a
+                    distinct NASCAR-inspired aesthetic.
+                </p>
+            </div>
+            <div class="project-image">
+                <div class="slideshow-container" id="mario_slideshow2">
+                    <div class="slides-wrapper">
+                        <a class="prev">❮</a>
+                        <a class="next">❯</a>
+                    </div>
+                    <div class="caption-container"></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="project-section">
+            <div class="project-image">
+                <figure>
+                    <video autoplay muted loop playsinline width="100%">
+                        <source src="../assets/253/tape.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <figcaption>R.O.B.erto navigating the twists and turns of the race track</figcaption>
+                </figure>
+            </div>
+
+            <div class="project-text">
+                <h2>Navigation & Control</h2>
+                <p>
+                    R.O.B.erto's navigation relied on a rear differential drive system balanced by a front caster wheel,
+                    enabling tight cornering on the winding course. He tracked the path using a custom PCB housing an
+                    array of six infrared reflectance sensors. Combining IR LEDs and phototransistors, these sensors
+                    measured the intensity of reflected light, allowing the system to distinguish the absorbent black
+                    tape from the reflective white surface.
+                </p>
+                <p>
+                    When R.O.B.erto drifted off-center, the combined sensor readings quantified a positional error that
+                    fed into a PID controller. This controller dynamically adjusted the left and right motor speeds to
+                    keep him centered on the line. Additionally, a forward-mounted ultrasonic sensor actively scanned
+                    for opponents, automatically reducing speed when obstacles were detected to prevent collisions.
+                </p>
+            </div>
+        </section>
+
+        <section class="project-section">
+            <div class="project-text">
+                <h2>Item Box Collection</h2>
+                <p>
+                    To retrieve items and score points, R.O.B.erto utilized a custom intake mechanism dubbed the
+                    "Elasti-Grab." This system consisted of a rotating wheel fitted with elastic bands that swept boxes
+                    into an internal collection bay. Designed for robustness, the intake motor was monitored by a rotary
+                    encoder coupled via custom 3D-printed gears. If the system detected a stall, it automatically
+                    reversed the motor to clear the jam.
+                </p>
+                <p>
+                    To avoid collecting point-deducting "bombs", the robot used a computer vision pipeline running
+                    on a Raspberry Pi to identify the red hazards. To minimize architectural complexity, communication
+                    between the Pi and the main STM32 microcontroller was streamlined to a single logic pin. When a bomb
+                    was identified, this signal triggered the Elasti-Grab to spin in reverse, rejecting the object to
+                    ensure only valid items were collected.
+                </p>
+            </div>
+
+            <div class="project-image">
+                <figure>
+                    <video autoplay muted loop playsinline width="100%">
+                        <source src="../assets/253/items.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <figcaption>Static test of the elasti-grab</figcaption>
+                </figure>
+            </div>
+        </section>
+
+        <section class="project-section">
+            <div class="project-image">
+                <figure>
+                    <video autoplay muted loop playsinline width="100%">
+                        <source src="../assets/253/zipline.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <figcaption>R.O.B.erto riding the zipline and collecting all the coins</figcaption>
+                </figure>
+            </div>
+
+            <div class="project-text">
+                <h2>Zipline</h2>
+                <p>
+                    The most technically demanding challenge of the race course was the zipline. To tackle this complex
+                    problem, we engineered a custom scissor lift, driven by a lead screw and mounted to the rear
+                    of the chassis. To simplify the latching process, the hook's geometry was designed to naturally
+                    engage the pole as the robot drove towards it. At the top of the lift was a small tray embedded with
+                    magnets, positioned to capture and retain the all the coins.
+                </p>
+                <p>
+                    To ensure autonomous operation, a gyroscope was used to detect the incline of the course's ramp.
+                    This signal initiated the lift, which was regulated by limit switches for precise positioning. After
+                    reaching the end of the line, the robot executed a programmed dismount maneuver to unhook itself and
+                    re-acquire the black tape to keep on racing.
+                </p>
+            </div>
+        </section>
+
+        <section class="project-section video-section">
+            <div class="project-text centered-text">
+                <h2>See R.O.B.erto in Action</h2>
+                <p>
+                    Watch the clip of the robot competition below to see R.O.B.erto run the course!
+                </p>
+            </div>
+
+            <div class="video-container">
+                <div class="video-wrapper standard-ratio">
+                    <iframe src="https://www.youtube.com/embed/SxDX0cfZN74"
+                        title="Mario Kart Robot During the Competition" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen>
+                    </iframe>
+                </div>
+            </div>
+        </section>
+
+        <section class="project-section resources-section">
+            <div class="project-image">
+                <figure>
+                    <img src="../assets/253/team.jpg" alt="Team Photo">
+                    <figcaption>The team behind R.O.B.erto (left to right): Davis T. (me), Josh H., Ian. H, Josh B.
+                    </figcaption>
+                </figure>
+            </div>
+            <div class="project-text">
+                <h2>Resources</h2>
+                <ul class="resource-list">
+                    <li>
+                        <a href="https://github.com/josheuchert/ROBERTOBOT" target="_blank">chassis.CAD</a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/josheuchert/ROBERTOBOT" target="_blank">source_code.cpp</a>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+    </main>
 
     <br>
     <div class="bottom-spacer-top"></div>
@@ -81,7 +263,26 @@
     <div class="bottom-spacer-bottom"></div>
     <br>
 
-    <script src="../javascript/commands.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const text = "mario_kart_robot/";   // the text to type
+            const typedText = document.getElementById("typed-text");
+            let index = 0;
+
+            function typeChar() {
+                if (index < text.length) {
+                    typedText.textContent += text.charAt(index);
+                    index++;
+                    setTimeout(typeChar, 120);  // typing speed (ms per character)
+                }
+            }
+
+            typeChar();
+        });
+    </script>
+
+    <script src="../javascript/scroll-indicator.js"></script>
+    <script src="../javascript/slideshow.js"></script>
 
 </body>
 
