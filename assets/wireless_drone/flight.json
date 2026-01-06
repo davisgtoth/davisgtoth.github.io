@@ -1,18 +1,18 @@
 [
     {
-        "src": "../assets/wireless_drone/videos/slow_rise.mp4",
-        "caption": "Wireless flight of a single RX coil tethered in"
+        "src": "../assets/wireless_drone/videos/drone.mp4",
+        "caption": "Wireless flight of the quadcopter drone tethered in, still lots of work to be done!"
     },
     {
-        "src": "../assets/wireless_drone/videos/flight.mp4",
-        "caption": "Sustained flight with slight nudges"
+        "src": "../assets/wireless_drone/videos/coil_rise.mp4",
+        "caption": "Wireless flight fo a single RX coil tethered in"
     },
     {
-        "src": "../assets/wireless_drone/videos/power_off.mp4",
-        "caption": "Wireless flight powered off "
+        "src": "../assets/wireless_drone/videos/drone_jump.mp4",
+        "caption": "Quadcopter drone flying out of the well upon power up"
     },
     {
-        "src": "../assets/wireless_drone/videos/jump.mp4",
-        "caption": "RX coil jumping out of magnetic well upon power on"
+        "src": "../assets/wireless_drone/videos/coil_jump.mp4",
+        "caption": "Single RX coil flying out of the well upon power up"
     }
 ]
