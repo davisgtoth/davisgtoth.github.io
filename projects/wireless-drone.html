@@ -37,7 +37,11 @@
             <h3 class="hero-title">
                 <span id="typed-text"></span><span class="cursor"></span>
             </h3>
-            <img src="../assets/wireless_drone/hero_img.png" alt="Wireless Drone hero image">
+            <video class="hero-media" autoplay muted loop playsinline
+                poster="../assets/wireless_drone/poster_image.jpg">
+                <source src="../assets/wireless_drone/up_and_down.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
             <div class="scroll-arrow" id="scrollArrow"></div>
         </div>
 
@@ -114,10 +118,18 @@
 
         <section class="project-section reverse-mobile">
             <div class="project-image">
-                <figure>
+                <!-- <figure>
                     <img src="../assets/wireless_drone/test_stand.png" alt="Test Stand">
                     <figcaption>Physical Test Stand Setup</figcaption>
-                </figure>
+                </figure> -->
+                <div class="slideshow-container" id="wd_slideshow2">
+                    <div class="slides-wrapper"></div>
+
+                    <a class="prev">❮</a>
+                    <a class="next">❯</a>
+
+                    <div class="caption-container"></div>
+                </div>
             </div>
             <div class="project-text">
                 <h2>Test Stand</h2>
@@ -157,7 +169,7 @@
                     read this! Feel free to reach out for the latest updates or for any technical inquiries.
                 </p>
             </div>
-            <div class="slideshow-container" id="wd_slideshow2">
+            <div class="slideshow-container" id="wd_slideshow3">
                 <div class="slides-wrapper"></div>
 
                 <a class="prev">❮</a>

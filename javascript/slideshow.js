@@ -122,6 +122,7 @@ function initSlideshow(containerId, jsonPath, enableAutoplay = true) {
 initSlideshow("ac_slideshow1", "../assets/ac_thrust/theory.json");
 initSlideshow("ac_slideshow2", "../assets/ac_thrust/test_stand.json");
 initSlideshow("wd_slideshow1", "../assets/wireless_drone/sim.json");
-initSlideshow("wd_slideshow2", "../assets/wireless_drone/flight.json", false);
+initSlideshow("wd_slideshow2", "../assets/wireless_drone/stand.json");
+initSlideshow("wd_slideshow3", "../assets/wireless_drone/flight.json", false);
 initSlideshow("mario_slideshow1", "../assets/253/robot.json");
 initSlideshow("mario_slideshow2", "../assets/253/mech.json");

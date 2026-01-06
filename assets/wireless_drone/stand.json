@@ -1,0 +1,30 @@
+[
+    {
+        "src": "../assets/wireless_drone/test_stand/setup.png",
+        "caption": "Test Stand Setup"
+    },
+    {
+        "src": "../assets/wireless_drone/test_stand/rx_and_tx.png",
+        "caption": "Test Stand Setup"
+    },
+    {
+        "src": "../assets/wireless_drone/test_stand/stand1.png",
+        "caption": "3D-Printed Test Stand"
+    },
+    {
+        "src": "../assets/wireless_drone/test_stand/stand2.png",
+        "caption": "3D-Printed Test Stand"
+    },
+    {
+        "src": "../assets/wireless_drone/test_stand/rx_coils.png",
+        "caption": "3D-Printed RX Coils"
+    },
+    {
+        "src": "../assets/wireless_drone/test_stand/coil_zoom.png",
+        "caption": "3D-Printed RX Coil - Close-Up"
+    },
+    {
+        "src": "../assets/wireless_drone/test_stand/tx.png",
+        "caption": "TX Circuitry with H-Bridge and Probes"
+    }
+]
