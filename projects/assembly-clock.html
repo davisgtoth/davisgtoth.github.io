@@ -32,33 +32,122 @@
         </div>
     </div>
 
-    <section class="content-section" id="assembly-clock">
-        <h3>assembly_clock/</h3>
-        <p>> cat description.txt</p>
-        <p>A digital clock programmed in assembly language on the DE0-CV FPGA board</p>
-        <br>
-        <p>> open demo.gif</p>
-        <img src="../assets/clock/demo.gif" alt="clock-demo" class="clock-gif" />
-        <br>
-        <p>> ls links/</p>
-        <p>
-            <a href="https://drive.google.com/file/d/1Pih4xNc-DAkgI93Po620b1XOz5TsJskU/view?usp=share_link"
-                target="_blank">display_modes.mp4</a>
-            <a href="https://drive.google.com/file/d/1hP8X9__XnFraSWP4BIFMsYvDi3j28dbl/view?usp=share_link"
-                target="_blank">setup_demo.mp4</a>
-            <a href="https://github.com/davisgtoth/AssemblyClock" target="_blank">source_code.github</a>
-        </p>
-        <br>
-        <p class="command">> cat project.rpt</p>
-        <div class="hidden-content">
-            <p>
-                Check out the github repo for demo videos and user guide.
-            </p>
-            <p>
-                To be completed...
-            </p>
+    <main class="project-page">
+        <div class="project-hero">
+            <h3 class="hero-title">
+                <span id="typed-text"></span><span class="cursor"></span>
+            </h3>
+            <video class="hero-media" autoplay muted loop playsinline poster="../assets/clock/poster_image.jpg">
+                <source src="../assets/clock/hero_clip.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="scroll-arrow" id="scrollArrow"></div>
         </div>
-    </section>
+
+        <section class="project-section">
+            <div class="project-text">
+                <h2>Project Overview</h2>
+                <p>
+                    This project began with a practical need for a desk clock and a Terasic DE0-CV FPGA board that was
+                    simply gathering dust. I used this as an opportunity to dive into bare-metal engineering,
+                    transforming the board into a fully functional digital clock entirely in 8051 Assembly.
+                    This approach allowed me to manually interface with the board's 7-segment displays and buttons,
+                    building a responsive, interactive system from the ground up. The full <a
+                        href="https://github.com/davisgtoth/AssemblyClock" target="_blank">source code</a> is available
+                    on my Github!
+                </p>
+                <p>
+                    The core challenge lay in shifting from high-level software to low-level hardware constraints.
+                    Unlike coding in Python, this environment required manual memory management, direct register
+                    manipulation, and strict adherence to a limited instruction set. With no native if/else structures
+                    available, I relied on status flags and conditional jumps to orchestrate complex logic. Ultimately,
+                    transforming raw binary data into a precise HH:MM:SS timekeeper and calendar was a rewarding
+                    challenge that forced me to problem-solve in an entirely new way.
+                </p>
+            </div>
+            <div class="project-image">
+                <figure>
+                    <img src="../assets/clock/code.png" alt="Project objective slide">
+                    <figcaption>Assembly code snippet of core clock logic</figcaption>
+                </figure>
+            </div>
+        </section>
+
+        <section class="project-section reverse-mobile">
+            <div class="project-image">
+                <figure>
+                    <video autoplay muted loop playsinline width="100%">
+                        <source src="../assets/clock/modes.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <figcaption>Display modes: 24/12 hour format, hide seconds, Date View, Sleep Mode
+                    </figcaption>
+                </figure>
+            </div>
+            <div class="project-text">
+                <h2>Display Modes</h2>
+                <p>
+                    To elevate this project beyond a trivial counter, I focused on designing a genuinely usable
+                    interface. I programmed the board's four push buttons to manipulate specific status flags in memory,
+                    enabling seamless toggling between distinct display modes. By default, the system operates in a
+                    24-hour format but can be instantly switched to a 12-hour standard. A separate control triggers a
+                    temporary "Date View" that displays the current date (MM/DD/YY) for two seconds before automatically
+                    reverting to the clock.
+                </p>
+                <p>
+                    Since this device lived on my desk, ergonomics were a priority. To eliminate the distraction of
+                    constantly flickering seconds in my peripheral vision, I implemented a mode to hide them — swapping
+                    the digits for AM/PM indicators when in 12-hour format. I also added a "Sleep Mode" to blank the
+                    bright 7-segment displays entirely. Crucially, the underlying timekeeping logic continues to run in
+                    the background regardless of the visual state, ensuring the clock maintains perfect accuracy.
+                </p>
+            </div>
+        </section>
+
+        <section class="project-section">
+            <div class="project-text">
+                <h2>Setting the Clock</h2>
+                <p>
+                    To ensure practical utility during events like Daylight Savings or power outages, I engineered a
+                    robust manual configuration system. Toggling specific board switches transitions the processor into
+                    a "Set State", allowing the user to directly modify the time or date. In this mode, the active
+                    digit pair (seconds/minutes/hours) is visually highlighted by a blinking effect. The push buttons
+                    serve as a navigation interface: two buttons shift the selection left or right, while the other two
+                    independently increment or decrement the value.
+                </p>
+                <p>
+                    The true complexity lies in the backend validation logic. I implemented custom boundary checks that
+                    dynamically adjust based on the context. For example, when setting the date, the system
+                    automatically caps the day at 30 for June or 31 for January. The logic even accounts for leap years,
+                    permitting February 29th only when appropriate. All inputs feature "roll-over" logic, ensuring that
+                    incrementing past a maximum value seamlessly loops back to the start, providing a smooth and
+                    intuitive user experience.
+                </p>
+            </div>
+            <div class="project-image">
+                <figure>
+                    <video autoplay muted loop playsinline width="100%">
+                        <source src="../assets/clock/setup.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <figcaption>Setting the time and then date of the clock upon power up</figcaption>
+                </figure>
+            </div>
+        </section>
+
+        <section class="project-section resources-section">
+            <div class="project-text">
+                <h2>Resources</h2>
+                <ul class="resource-list">
+                    <li>
+                        <a href="https://github.com/davisgtoth/AssemblyClock" target="_blank">source_code.asm</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="project-image" style="visibility: hidden; height: 0;"></div>
+        </section>
+    </main>
 
     <br>
     <div class="bottom-spacer-top"></div>
@@ -67,7 +156,25 @@
     <div class="bottom-spacer-bottom"></div>
     <br>
 
-    <script src="../javascript/commands.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const text = "assembly_clock/";   // the text to type
+            const typedText = document.getElementById("typed-text");
+            let index = 0;
+
+            function typeChar() {
+                if (index < text.length) {
+                    typedText.textContent += text.charAt(index);
+                    index++;
+                    setTimeout(typeChar, 120);  // typing speed (ms per character)
+                }
+            }
+
+            typeChar();
+        });
+    </script>
+
+    <script src="../javascript/scroll-indicator.js"></script>
 
 </body>
 

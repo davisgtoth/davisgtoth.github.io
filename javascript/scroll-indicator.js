@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", function () {
         if (window.scrollY < 50) {
             arrow.classList.add('visible');
         }
-    }, 5000);
+    }, 8000);
 
     // 2. FADE OUT (Same as before)
     window.addEventListener('scroll', () => {
