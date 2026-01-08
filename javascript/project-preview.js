@@ -12,6 +12,7 @@ document.addEventListener("DOMContentLoaded", () => {
     let hasStarted = false; // Flag to ensure we don't restart it if the user just scrolled up and down
 
     // Function to update the preview pane
+    // Function to update the preview pane
     function updatePreview(index, autoPlay = true) {
         items.forEach(item => item.classList.remove('active'));
 
@@ -31,20 +32,45 @@ document.addEventListener("DOMContentLoaded", () => {
 
         // Update Media
         if (type === 'video') {
-            previewImage.classList.remove('show');
-            previewVideo.poster = poster;
-            previewVideo.src = src;
-            previewVideo.classList.add('show');
+            // STEP 1: Show the static image immediately.
+            // This covers the video player while it buffers, preventing the black screen.
+            previewImage.src = poster;
+            previewImage.classList.add('show');
 
-            if (autoPlay) {
-                var playPromise = previewVideo.play();
-                if (playPromise !== undefined) {
-                    playPromise.catch(error => { });
+            // STEP 2: Hide the video player temporarily
+            previewVideo.classList.remove('show');
+
+            // STEP 3: Start loading the video in the background
+            previewVideo.src = src;
+            previewVideo.poster = poster;
+            previewVideo.load();
+
+            // STEP 4: Listen for the 'canplay' event
+            // This fires only when the video has buffered enough to start playing
+            previewVideo.oncanplay = () => {
+                // Remove this listener so it doesn't fire multiple times
+                previewVideo.oncanplay = null;
+
+                if (autoPlay) {
+                    var playPromise = previewVideo.play();
+                    if (playPromise !== undefined) {
+                        playPromise.catch(error => { console.log("Autoplay blocked:", error) });
+                    }
                 }
-            }
+
+                // STEP 5: The Swap. Video is ready, so show it and hide the image.
+                previewVideo.classList.add('show');
+                previewImage.classList.remove('show');
+            };
+
         } else {
+            // Standard Image Logic
             previewVideo.classList.remove('show');
             previewVideo.pause();
+
+            // Remove the listener just in case a previous video is still trying to load
+            previewVideo.oncanplay = null;
+
             previewImage.src = src;
             previewImage.classList.add('show');
         }
