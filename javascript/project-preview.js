@@ -9,9 +9,20 @@ document.addEventListener("DOMContentLoaded", () => {
     let currentIndex = 0;
     let autoCycleInterval;
     let isPaused = false;
-    let hasStarted = false; // Flag to ensure we don't restart it if the user just scrolled up and down
+    let hasStarted = false;
 
-    // Function to update the preview pane
+    // --- NEW: PRELOADER FUNCTION ---
+    // This forces the browser to download all poster images in the background immediately.
+    function preloadImages() {
+        items.forEach(item => {
+            const posterSrc = item.getAttribute('data-poster');
+            if (posterSrc) {
+                const img = new Image();
+                img.src = posterSrc; // This caches the image
+            }
+        });
+    }
+
     // Function to update the preview pane
     function updatePreview(index, autoPlay = true) {
         items.forEach(item => item.classList.remove('active'));
@@ -32,43 +43,38 @@ document.addEventListener("DOMContentLoaded", () => {
 
         // Update Media
         if (type === 'video') {
-            // STEP 1: Show the static image immediately.
-            // This covers the video player while it buffers, preventing the black screen.
+            // 1. Show the static image immediately (It should now be cached!)
             previewImage.src = poster;
             previewImage.classList.add('show');
 
-            // STEP 2: Hide the video player temporarily
+            // 2. Hide video while it loads
             previewVideo.classList.remove('show');
 
-            // STEP 3: Start loading the video in the background
+            // 3. Load video in background
             previewVideo.src = src;
             previewVideo.poster = poster;
             previewVideo.load();
 
-            // STEP 4: Listen for the 'canplay' event
-            // This fires only when the video has buffered enough to start playing
+            // 4. Wait for video to be ready before swapping
             previewVideo.oncanplay = () => {
-                // Remove this listener so it doesn't fire multiple times
-                previewVideo.oncanplay = null;
+                previewVideo.oncanplay = null; // Remove listener
 
-                if (autoPlay) {
+                if (autoPlay && !isPaused) {
                     var playPromise = previewVideo.play();
                     if (playPromise !== undefined) {
-                        playPromise.catch(error => { console.log("Autoplay blocked:", error) });
+                        playPromise.catch(error => { console.log("Autoplay blocked/interrupted") });
                     }
                 }
 
-                // STEP 5: The Swap. Video is ready, so show it and hide the image.
+                // 5. The Swap: Only show video once it's actually ready
                 previewVideo.classList.add('show');
                 previewImage.classList.remove('show');
             };
 
         } else {
-            // Standard Image Logic
+            // Image Logic
             previewVideo.classList.remove('show');
             previewVideo.pause();
-
-            // Remove the listener just in case a previous video is still trying to load
             previewVideo.oncanplay = null;
 
             previewImage.src = src;
@@ -94,31 +100,31 @@ document.addEventListener("DOMContentLoaded", () => {
         clearInterval(autoCycleInterval);
     }
 
-    // --- INITIALIZATION & OBSERVER ---
+    // --- INITIALIZATION ---
 
-    // 1. Initialize the layout (Show item 0), but DO NOT start the timer yet.
+    // 1. Run Preloader ASAP
+    preloadImages();
+
+    // 2. Initialize the layout (Show item 0)
     updatePreview(0, false);
 
-    // 2. Set up the Intersection Observer to watch the section
+    // 3. Set up the Intersection Observer
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
-            // If the section is visible AND we haven't started yet
             if (entry.isIntersecting && !hasStarted) {
-                hasStarted = true; // Lock it so scrolling away/back doesn't reset the order
+                hasStarted = true;
                 updatePreview(currentIndex, true);
                 startAutoCycle();
-                observer.disconnect(); // We only need to catch this once
+                observer.disconnect();
             }
         });
     }, { threshold: 0.8 });
 
-    // Start watching the project list
     if (projectList) {
         observer.observe(projectList);
     }
 
     // --- INTERACTION ---
-
     items.forEach((item, index) => {
         item.addEventListener('mouseenter', () => {
             isPaused = true;
