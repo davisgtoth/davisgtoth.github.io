@@ -683,5 +683,148 @@ p.footnote {
 /* Standard 16:9 Widescreen Video Modifier */
 .video-wrapper.standard-ratio {
     padding-bottom: 56.25%;
-    /* 9 / 16 = 0.5625 */
+}
+
+/* --- SPLIT PANE TERMINAL LAYOUT --- */
+.terminal-split-view {
+    display: grid;
+    grid-template-columns: 450px 1fr;
+
+    gap: 0px;
+    /* No gap needed, columns handle spacing */
+    margin-top: 20px;
+    margin-bottom: 60px;
+    align-items: start;
+    /* Align tops of both columns */
+    padding-right: 50px;
+}
+
+/* LEFT COLUMN: List */
+.project-list {
+    flex: 0 0 auto;
+    /* display: flex;
+    flex-direction: column; */
+    min-width: 250px;
+    padding-left: 20px;
+}
+
+.ls-command {
+    color: #ffffff;
+    margin-bottom: 10px !important;
+    font-weight: normal;
+    font-size: 0.8em;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.project-list .project-item {
+    display: block;
+    width: fit-content;
+    padding: 8px 10px;
+    margin-left: 10px;
+    text-decoration: none;
+    color: #ffffff;
+    border-left: 2px solid transparent;
+    transition: all 0.2s ease;
+    cursor: pointer;
+    font-size: 0.8em;
+    line-height: 1.4;
+}
+
+/* Hover State */
+.project-list .project-item:hover {
+    /* color: #4b92f6; */
+    color: #afaeae;
+}
+
+/* Active State (Highlighted by JS) */
+.project-item.active {
+    background-color: #3c3c3c;
+    /* color: #000000; */
+    /* Inverted Colors */
+    /* font-weight: bold; */
+}
+
+.project-item.active::before {
+    content: "> ";
+}
+
+/* RIGHT COLUMN: Preview Window */
+.project-preview-pane {
+    justify-self: center;
+    width: 100%;
+    max-width: 900px;
+    aspect-ratio: 16 / 9;
+    border-radius: 10px;
+    overflow: hidden;
+
+    /* Visuals */
+    border: 1px solid #444;
+    background-color: #000000;
+    /* This creates the "Black Bars" */
+    display: flex;
+    flex-direction: column;
+}
+
+.preview-header {
+    background-color: #333;
+    color: #fff;
+    padding: 5px 10px;
+    font-size: 0.6em;
+    border-bottom: 1px solid #444;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.preview-content {
+    flex-grow: 1;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.preview-content img,
+.preview-content video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center center;
+    /* Ensures image covers area without stretching */
+    display: none;
+    /* Hidden by default */
+}
+
+.preview-content .show {
+    display: block;
+}
+
+/* MOBILE: Collapse to list only */
+@media (max-width: 800px) {
+    .terminal-split-view {
+        grid-template-columns: 1fr;
+        /* Switch to single column stack */
+    }
+
+    .project-preview-pane {
+        display: none;
+        /* Hide preview on mobile as discussed */
+    }
+
+    .project-list {
+        padding-left: 0;
+        /* Reset indentation if needed */
+    }
+}
+
+.preview-footer {
+    background-color: #333;
+    color: #b0b0b0;
+    padding: 6px 10px;
+    font-size: 0.5em;
+    border-top: 1px solid #444;
+    font-family: 'Courier New', Courier, monospace;
+
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }

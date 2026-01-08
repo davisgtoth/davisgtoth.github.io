@@ -38,32 +38,57 @@
             <span id="title"></span><span id="cursor" class="cursor">|</span>
         </div>
     </div>
+    <div class="scroll-arrow" id="scrollArrow" style="position: fixed; bottom: 30px;"></div>
 
     <section class="content-section" id="projects">
         <h2>~/projects</h2>
-    </section>
 
-    <section class="content-section" id="table-of-contents">
-        <p>> ls</p>
-        <div class="project-link">
-            <a href="projects/wireless-drone.html">wireless_drone/</a>
-            <p class="tags">#wireless_power #passive_control #electromagnetism #magnum_opus</p>
-        </div>
-        <div class="project-link">
-            <a href="projects/detective-robot.html">detective_robot/</a>
-            <p class="tags">#Python #Linux #computer_vision #AI/ML</p>
-        </div>
-        <div class="project-link">
-            <a href="projects/mario-kart-robot.html">mario_kart_robot/</a>
-            <p class="tags">#robotics #CAD #rapid_prototyping</p>
-        </div>
-        <div class="project-link">
-            <a href="projects/ac-ionic-thruster.html">ac_ionic_thruster/</a>
-            <p class="tags">#particle_physics #high_voltage #simulation</p>
-        </div>
-        <div class="project-link">
-            <a href="projects/assembly-clock.html">assembly_clock/</a>
-            <p class="tags">#FPGA #assembly_language</p>
+        <div class="terminal-split-view">
+            <div class="project-list" id="projectList">
+                <p class="ls-command">> ls</p>
+
+                <a href="projects/wireless-drone.html" class="project-item"
+                    data-src="assets/wireless_drone/hero_clip.mp4" data-poster="assets/wireless_drone/hero_img.jpg"
+                    data-type="video" data-tags="[TAGS]: #R&D #wireless_power #electromagnetism #magnum_opus">
+                    wireless_drone/
+                </a>
+
+                <a href="projects/detective-robot.html" class="project-item" data-src="assets/353/hero_clip.mp4"
+                    data-poster="assets/353/hero_img.jpg" data-type="video"
+                    data-tags="[TAGS]: #Python #Linux #computer_vision #AI/ML">
+                    detective_robot/
+                </a>
+
+                <a href="projects/mario-kart-robot.html" class="project-item" data-src="assets/253/hero_clip.mp4"
+                    data-poster="assets/253/hero_img.jpg" data-type="video"
+                    data-tags="[TAGS]: #robotics #CAD #rapid_prototyping">
+                    mario_kart_robot/
+                </a>
+
+                <a href="projects/ac-ionic-thruster.html" class="project-item" data-src="assets/ac_thrust/hero_img.png"
+                    data-type="image" data-tags="[TAGS]: #R&D #physics_sim #high_voltage">
+                    ac_ionic_thruster/
+                </a>
+
+                <a href="projects/assembly-clock.html" class="project-item" data-src="assets/clock/hero_clip.mp4"
+                    data-poster="assets/clock/hero_img.png" data-type="video"
+                    data-tags="[TAGS]: #assembly_language #FPGA #digital_logic">
+                    assembly_clock/
+                </a>
+            </div>
+
+            <div class="project-preview-pane">
+                <div class="preview-header">
+                    <span id="previewLabel">[PREVIEW: wireless_drone/]</span>
+                </div>
+                <div class="preview-content">
+                    <img id="previewImage" src="" alt="Project Preview">
+                    <video id="previewVideo" muted loop playsinline></video>
+                </div>
+                <div class="preview-footer">
+                    <span id="previewTags">[TAGS]: loading...</span>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -88,6 +113,8 @@
 
     <script src="javascript/title.js"></script>
     <script src="javascript/scroll.js"></script>
+    <script src="javascript/project-preview.js"></script>
+
 </body>
 
 </html>
