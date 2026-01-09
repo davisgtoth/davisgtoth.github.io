@@ -778,24 +778,31 @@ p.footnote {
     flex-grow: 1;
     position: relative;
     overflow: hidden;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    background-color: #000;
+
+    /* NEW: Ensures the "frozen" background image matches the foreground image exactly */
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
 }
 
 .preview-content img,
 .preview-content video {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
     object-fit: cover;
     object-position: center center;
-    /* Ensures image covers area without stretching */
-    display: none;
-    /* Hidden by default */
+    opacity: 0;
+    transition: opacity 0.6s ease-in-out;
+    display: block;
 }
 
 .preview-content .show {
-    display: block;
+    opacity: 1;
+    z-index: 10;
 }
 
 /* MOBILE: Collapse to list only */

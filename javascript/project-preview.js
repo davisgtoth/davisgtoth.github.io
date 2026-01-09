@@ -5,6 +5,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const previewVideo = document.getElementById('previewVideo');
     const previewLabel = document.getElementById('previewLabel');
     const previewTags = document.getElementById('previewTags');
+    const previewContent = document.querySelector('.preview-content');
 
     let currentIndex = 0;
     let autoCycleInterval;
@@ -23,60 +24,62 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    // Function to update the preview pane
     function updatePreview(index, autoPlay = true) {
         items.forEach(item => item.classList.remove('active'));
+        items[index].classList.add('active');
 
-        const currentItem = items[index];
-        currentItem.classList.add('active');
+        // --- STEP 1: BACKGROUND FREEZE ---
+        if (previewImage.src) {
+            previewContent.style.backgroundImage = `url(${previewImage.src})`;
+        }
+
+        // --- STEP 2: PREPARE SWAP ---
+        previewImage.style.transition = 'none';
+        previewVideo.style.transition = 'none';
+
+        previewImage.classList.remove('show');
+        previewVideo.classList.remove('show');
 
         // Get data
+        const currentItem = items[index];
         const src = currentItem.getAttribute('data-src');
         const type = currentItem.getAttribute('data-type');
         const poster = currentItem.getAttribute('data-poster');
         const name = currentItem.innerText;
         const tags = currentItem.getAttribute('data-tags');
 
-        // Update Label
+        // Update Text
         previewLabel.innerText = `[PREVIEW: ${name}]`;
         previewTags.innerText = tags || "[TAGS]: ...";
 
-        // Update Media
+        // --- STEP 3: CROSS-FADE ---
+        void previewImage.offsetWidth; // Force Reflow
+
+        previewImage.style.transition = 'opacity 0.6s ease';
+        previewVideo.style.transition = 'opacity 0.6s ease';
+
         if (type === 'video') {
-            // 1. Show the static image immediately (It should now be cached!)
             previewImage.src = poster;
-            previewImage.classList.add('show');
-
-            // 2. Hide video while it loads
-            previewVideo.classList.remove('show');
-
-            // 3. Load video in background
             previewVideo.src = src;
             previewVideo.poster = poster;
             previewVideo.load();
 
-            // 4. Wait for video to be ready before swapping
-            previewVideo.oncanplay = () => {
-                previewVideo.oncanplay = null; // Remove listener
+            previewImage.classList.add('show');
 
-                if (autoPlay && !isPaused) {
-                    var playPromise = previewVideo.play();
-                    if (playPromise !== undefined) {
-                        playPromise.catch(error => { console.log("Autoplay blocked/interrupted") });
-                    }
+            previewVideo.oncanplay = () => {
+                previewVideo.oncanplay = null;
+
+                // FIX IS HERE: We removed "&& !isPaused"
+                // We want the video to play if autoPlay is requested, even if the user is hovering.
+                if (autoPlay) {
+                    previewVideo.play().catch(e => console.log("Autoplay blocked"));
                 }
 
-                // 5. The Swap: Only show video once it's actually ready
                 previewVideo.classList.add('show');
-                previewImage.classList.remove('show');
             };
 
         } else {
-            // Image Logic
-            previewVideo.classList.remove('show');
             previewVideo.pause();
-            previewVideo.oncanplay = null;
-
             previewImage.src = src;
             previewImage.classList.add('show');
         }
