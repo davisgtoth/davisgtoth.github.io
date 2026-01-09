@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/title.css">
     <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 
 <body class="landing-page">
@@ -94,27 +95,80 @@
 
     <section class="content-section" id="about">
         <h2>~/about</h2>
-        <p>> whoami</p>
-        <p>I'm Davis, an Engineering Physics student at the University of British Columbia</p>
-        <br>
-        <p>> ls links/</p>
-        <p>
-            <a href="https://www.linkedin.com/in/davis-toth" target="_blank">linkedin</a>
-            <a href="https://github.com/davisgtoth" target="_blank">github</a>
-            <a href="mailto:davisgtoth@gmail.com">email</a>
-        </p>
-        <br>
-        <div class="bottom-spacer-top"></div>
-        <div class="horizontal-line"></div>
-        <p class="footnote">This site is still in development</p>
-        <div class="bottom-spacer-bottom"></div>
-        <br>
+        <div class="about-split-view">
+
+            <div class="about-text-column">
+                <p class="ls-command">> whoami</p>
+
+                <div class="about-bio-body">
+                    <p>
+                        Hi! I'm Davis, an Engineering Physics student at the University of British Columbia. At my core,
+                        I view engineering challenges as puzzles waiting to be solved. I thrive in environments where
+                        the path forward isn't immediately clear, using experimental design and first-principles
+                        thinking to navigate through ambiguity.
+                    </p>
+                    <p>
+                        While I have a strong academic background in math and physics, my passion is applying
+                        these theoretical concepts to the real world. I love the hands-on process of bridging
+                        the gap between physics and hardware, whether that means designing custom electronics,
+                        tuning control systems, or prototyping novel electromechanical devices.
+                    </p>
+                    <p>
+                        Outside of engineering, I play a lot of Ultimate Frisbee! I compete in the USA D1
+                        college series for UBC, where I've captained the squad for the past two years — recently leading
+                        the program to its first USA College Nationals qualification in seven years! I have also
+                        represented Canada internationally at the U20 and U24 levels, most recently bringing home a
+                        silver medal from the World Championships. If you want to see the sport in action, you can watch
+                        our crossover game against Japan at the
+                        <a href="https://www.youtube.com/live/d5dtYY_yKSg?si=DBFX4AbFp_hqrQCH" target="_blank">U24 World
+                            Championships here</a>!
+                    </p>
+                </div>
+
+                <br>
+            </div>
+
+            <div class="about-image-column">
+                <div class="about-grid">
+                    <img src="assets/about/headshot.jpg" class="about-hero" alt="Me">
+
+                    <img src="assets/about/frisbee.jpg" class="about-hobby" alt="Frisbee Picture">
+                    <video class="about-hobby" autoplay muted loop playsinline>
+                        <source src="assets/about/gym.mp4" type="video/mp4">
+                        <img src="assets/about/gym.jpg" alt="Gym Picture">
+                    </video>
+                    <img src="assets/about/worlds.png" class="about-hobby" alt="Worlds Picture">
+                </div>
+            </div>
+
+        </div>
     </section>
+
+    <footer class="site-footer">
+        <div class="horizontal-line"></div>
+
+        <div class="footer-content">
+            <div class="social-links">
+                <a href="https://github.com/davisgtoth" target="_blank" aria-label="GitHub">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/davis-toth" target="_blank" aria-label="LinkedIn">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="mailto:davisgtoth@gmail.com" aria-label="Email">
+                    <i class="fas fa-envelope"></i>
+                </a>
+            </div>
+
+            <p class="copyright">
+                © 2026 Davis Toth. Built with <i class="fas fa-code"></i> and <i class="fas fa-robot"></i>.
+            </p>
+        </div>
+    </footer>
 
     <script src="javascript/title.js"></script>
     <script src="javascript/scroll.js"></script>
     <script src="javascript/project-preview.js"></script>
-
 </body>
 
 </html>

@@ -828,3 +828,190 @@ p.footnote {
     overflow: hidden;
     text-overflow: ellipsis;
 }
+
+/* === About Section Specifics === */
+
+/* The Container: Side-by-side, Top Aligned, Left Justified */
+.about-split-view {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+    /* changed from center to flex-start */
+    gap: 40px;
+    /* Space between text and pictures */
+    width: 100%;
+    margin-top: 10px;
+    padding-right: 50px;
+}
+
+/* LEFT COLUMN: Text Area */
+.about-text-column {
+    flex: 1;
+    /* Takes up available space */
+    max-width: 650px;
+    /* Prevents lines from getting too long to read */
+    padding-top: 0;
+}
+
+/* 1. Header Alignment */
+/* We rely on the global .content-section h2 for the '~/about' alignment */
+
+/* 2. Command Alignment (> whoami) */
+.about-text-column .ls-command {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.8em;
+    margin-bottom: 20px;
+    margin-left: 40px;
+    /* This sets the "Line of Alignment" */
+    color: #ffffff;
+}
+
+/* 3. Bio Text Alignment */
+.about-bio-body {
+    /* Reset the container margin so it doesn't interfere */
+    margin-left: 0;
+    padding-right: 20px;
+}
+
+.about-bio-body p {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 0.6em;
+    line-height: 1.7;
+    color: #e0e0e0;
+    margin-bottom: 20px;
+
+    margin-left: 50px;
+}
+
+/* RIGHT COLUMN: Image Area */
+.about-image-column {
+    /* CHANGED: 'flex: 1' lets it fill the empty space, replacing fixed '450px' */
+    flex: 1;
+
+    /* CHANGED: Capped at 750px so it balances nicely with the text column.
+       (Matches the rough width of your Project Preview pane above) */
+    max-width: 750px;
+
+    padding-top: 10px;
+}
+
+/* Grid Layout: Switch to 3 columns */
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    /* Three equal columns */
+    gap: 15px;
+}
+
+/* Landscape Headshot (The "Banner") */
+.about-hero {
+    grid-column: span 3;
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    object-position: center center;
+    border-radius: 6px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    z-index: 1;
+}
+
+/* Portrait Images (The Row of 3) */
+.about-hobby {
+    width: 100%;
+    aspect-ratio: 9/16;
+    object-fit: cover;
+    border-radius: 6px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    filter: brightness(0.9);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    z-index: 1;
+}
+
+.about-hero:hover,
+.about-hobby:hover {
+    /* Scales the image up by 3% */
+    transform: scale(1.03);
+
+    /* Makes the shadow darker and more spread out (simulates height) */
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.5);
+
+    /* Brings it to the front */
+    z-index: 10;
+}
+
+/* Mobile: Stack them */
+@media (max-width: 900px) {
+    .about-split-view {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .about-text-column,
+    .about-image-column {
+        max-width: 100%;
+        flex: auto;
+    }
+
+    .about-bio-body {
+        margin-left: 10px;
+        /* Less indentation on mobile to save space */
+    }
+}
+
+/* === Site Footer === */
+.site-footer {
+    width: 100%;
+    margin-top: 100px;
+    /* Space between content and footer */
+    padding-bottom: 40px;
+    text-align: center;
+}
+
+/* Reusing your existing line, but centering it nicely */
+.site-footer .horizontal-line {
+    width: 30%;
+    height: 1px;
+    background-color: #444;
+    /* Subtler grey */
+    margin: 0 auto 30px auto;
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.social-links {
+    display: flex;
+    gap: 30px;
+    /* Space between icons */
+}
+
+.social-links a {
+    color: #b0b0b0;
+    /* Start with a muted grey */
+    font-size: 1.8rem;
+    /* Icon size */
+    transition: color 0.3s ease, transform 0.2s ease;
+}
+
+/* Hover Effects */
+.social-links a:hover {
+    color: #4b92f6;
+    /* Your site's blue accent color */
+    transform: translateY(-3px);
+    /* Subtle "lift" effect */
+}
+
+.copyright {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.7rem;
+    color: #666;
+    margin-top: 10px;
+}
