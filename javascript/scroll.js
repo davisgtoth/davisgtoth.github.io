@@ -39,7 +39,7 @@ document.addEventListener("DOMContentLoaded", () => {
             if (window.scrollY < 50) {
                 arrow.classList.add('visible');
             }
-        }, 6000); // 4000ms = 4 seconds delay. Adjust as needed.
+        }, 5000);
     }
 
     // --- 4. ARROW CLICK (SMOOTH SCROLL) ---
