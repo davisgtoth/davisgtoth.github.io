@@ -92,12 +92,83 @@ body.landing-page .navbar.visible {
     display: block;
 }
 
+/* Hamburg menu styles (desktop default hide) */
+.nav-btn {
+    display: none;
+}
+
+#nav-check {
+    display: none;
+}
+
 @media (max-width: 600px) {
+    .navbar {
+        padding: 0 15px;
+    }
+
     .nav-left p {
-        font-size: 1.2em;
+        font-size: 1.0em;
+        white-space: nowrap; /* Prevent vertical wrapping */
+        margin: 0;
+    }
+
+    .nav-btn {
+        display: block;
+        cursor: pointer;
+        padding: 10px;
+    }
+
+    .nav-btn i {
+        color: white;
+        font-size: 1.2rem;
+    }
+
+    .nav-right {
+        display: none; /* Hide menu by default */
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background-color: #000000;
+        border-bottom: 1px solid #333;
+        padding: 10px 0;
+        height: auto;
+    }
+
+    #nav-check:checked ~ .nav-right {
+        display: flex; /* Show menu when checkbox is checked */
     }
 
     .nav-right a {
+        width: 100%;
+        text-align: center;
+        padding: 15px 0;
+        font-size: 1.0em;
+        height: auto;
+    }
+
+    .dropdown {
+        width: 100%;
+        text-align: center;
+    }
+
+    .dropdown-content {
+        position: static; /* Stack dropdown vertically inside menu */
+        transform: none;
+        box-shadow: none;
+        display: none;
+        background-color: #111;
+        width: 100%;
+        padding: 0;
+    }
+
+    .dropdown:hover .dropdown-content {
+        display: block;
+    }
+
+    .dropdown-content a {
+        padding: 12px 0;
         font-size: 0.9em;
     }
 }

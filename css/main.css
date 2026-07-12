@@ -3,6 +3,10 @@ body {
     color: #ffffff;
     font-family: 'Courier New', Courier, monospace;
     margin: 0;
+    min-height: 100vh;
+}
+
+body.landing-page {
     height: 200vh;
 }
 
@@ -89,12 +93,17 @@ body.landing-page .content-section.visible {
     .content-section p {
         font-size: 1.0em;
     }
+
+    .content-section a {
+        margin-right: 15px;
+        /* Reduce large desktop margin to prevent wrapping/overflow */
+    }
 }
 
 .content-section a {
     color: #a6c8f9;
     text-decoration: none;
-    margin: 0, 15px;
+    margin: 0 15px;
     margin-right: 80px;
 }
 
@@ -104,6 +113,11 @@ body.landing-page .content-section.visible {
 
 .content-section a:hover {
     color: #4b92f6;
+}
+
+/* Ensure inline links inside paragraph text flow naturally without block-level margins */
+.content-section p a {
+    margin: 0;
 }
 
 #table-of-contents a {
@@ -370,7 +384,8 @@ p.footnote {
     position: relative;
     width: 100%;
     height: 720px;
-    margin: 2rem auto 4rem auto;
+    margin: 60px auto 4rem auto;
+    /* Flush with the bottom of the 60px fixed navbar */
     overflow: hidden;
     border-radius: 12px;
     box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
@@ -415,12 +430,6 @@ p.footnote {
     margin-left: 0.1em;
     animation: blink 1s step-end infinite;
     vertical-align: bottom;
-}
-
-@keyframes blink {
-    50% {
-        opacity: 0;
-    }
 }
 
 /* Slideshow container */
@@ -525,16 +534,35 @@ p.footnote {
     }
 
     .project-hero {
-        height: 60vh;
+        height: auto;
+        aspect-ratio: 16 / 9;
+        margin-top: 60px;
+        /* Flush with the bottom of the 60px fixed navbar */
+        margin-bottom: 2rem;
     }
 
     .project-hero .hero-title {
         font-size: 1.5rem;
         /* Shrinks the hero title text */
+        top: 5px;
+        /* Pull it closer to the top of the video container on mobile */
+        left: 5px;
+        /* Move it closer to the left edge of the video container on mobile */
+        margin: 0;
+        /* Reset default browser margins pushing the text down */
     }
 
     .project-section.reverse-mobile {
         flex-direction: column-reverse;
+    }
+
+    /* Align Resources section to the left on mobile */
+    .resources-section {
+        align-items: flex-start;
+    }
+
+    .resources-section .project-text {
+        width: 100%;
     }
 }
 
@@ -705,15 +733,16 @@ p.footnote {
     /* display: flex;
     flex-direction: column; */
     min-width: 250px;
-    padding-left: 20px;
+    padding-left: 30px; /* Indent > ls 20px right of ~/projects heading */
 }
 
-.ls-command {
+p.ls-command {
     color: #ffffff;
     margin-bottom: 10px !important;
     font-weight: normal;
     font-size: 0.8em;
     font-family: 'Courier New', Courier, monospace;
+    margin-left: 0;
 }
 
 .project-list .project-item {
@@ -806,15 +835,21 @@ p.footnote {
 }
 
 /* MOBILE: Collapse to list only */
-@media (max-width: 800px) {
+@media (max-width: 900px) {
     .terminal-split-view {
         grid-template-columns: 1fr;
         /* Switch to single column stack */
+        padding-right: 0;
+        /* Reset right padding to center layout on mobile */
     }
 
     .project-preview-pane {
-        display: none;
-        /* Hide preview on mobile as discussed */
+        display: flex;
+        /* Show the preview pane on mobile */
+        margin-top: 20px;
+        /* Add some space below the list */
+        width: 100%;
+        max-width: 100%;
     }
 
     .project-list {
@@ -866,12 +901,7 @@ p.footnote {
 
 /* 2. Command Alignment (> whoami) */
 .about-text-column .ls-command {
-    font-family: 'Courier New', Courier, monospace;
-    font-size: 0.8em;
-    margin-bottom: 20px;
-    margin-left: 40px;
-    /* This sets the "Line of Alignment" */
-    color: #ffffff;
+    margin-left: 30px; /* Indent > whoami 20px right of ~/about heading */
 }
 
 /* 3. Bio Text Alignment */
@@ -955,6 +985,8 @@ p.footnote {
     .about-split-view {
         flex-direction: column;
         gap: 30px;
+        padding-right: 0;
+        /* Reset right padding to center layout on mobile */
     }
 
     .about-text-column,
@@ -966,6 +998,17 @@ p.footnote {
     .about-bio-body {
         margin-left: 10px;
         /* Less indentation on mobile to save space */
+    }
+
+    .about-bio-body p {
+        font-size: 0.95rem;
+        /* Make text readable on mobile */
+        margin-left: 0;
+        /* Remove the extra left margin of the paragraph */
+    }
+
+    .ls-command {
+        margin-left: 10px !important; /* Keep prompts aligned to the 10px left margin on mobile */
     }
 }
 

@@ -135,6 +135,20 @@ document.addEventListener("DOMContentLoaded", () => {
             currentIndex = index;
             updatePreview(currentIndex);
         });
+
+        // Mobile touch/click preview update without immediate navigation
+        item.addEventListener('click', (e) => {
+            if (window.innerWidth <= 800) {
+                // If this item is not already active, prevent navigating to the link
+                if (!item.classList.contains('active')) {
+                    e.preventDefault();
+                    isPaused = true;
+                    stopAutoCycle();
+                    currentIndex = index;
+                    updatePreview(currentIndex);
+                }
+            }
+        });
     });
 
     projectList.addEventListener('mouseleave', () => {
