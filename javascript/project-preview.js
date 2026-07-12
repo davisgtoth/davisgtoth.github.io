@@ -62,6 +62,7 @@ document.addEventListener("DOMContentLoaded", () => {
             previewImage.src = poster;
             previewVideo.src = src;
             previewVideo.poster = poster;
+            previewVideo.autoplay = true;
             previewVideo.load();
 
             previewImage.classList.add('show');
