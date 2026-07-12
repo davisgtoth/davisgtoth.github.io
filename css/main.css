@@ -56,7 +56,7 @@ body.landing-page .content-section.visible {
     font-size: 2.2em;
     font-weight: normal;
     margin-left: 10px;
-    margin-bottom: 20px
+    margin-bottom: 10px; /* Reduced from 20px to tighten heading spacing */
 }
 
 .content-section h3 {
@@ -83,11 +83,11 @@ body.landing-page .content-section.visible {
     }
 
     .content-section h2 {
-        font-size: 2.2em;
+        font-size: 1.4em; /* Scaled down to balance with the 'cd' main title on mobile */
     }
 
     .content-section h3 {
-        font-size: 1.8em;
+        font-size: 1.2em; /* Scaled down proportionately */
     }
 
     .content-section p {
@@ -720,7 +720,7 @@ p.footnote {
 
     gap: 0px;
     /* No gap needed, columns handle spacing */
-    margin-top: 20px;
+    margin-top: 10px; /* Reduced from 20px to tighten space below ~/projects */
     margin-bottom: 60px;
     align-items: start;
     /* Align tops of both columns */
@@ -883,7 +883,7 @@ p.ls-command {
     gap: 40px;
     /* Space between text and pictures */
     width: 100%;
-    margin-top: 10px;
+    margin-top: 5px; /* Reduced from 10px to tighten space below ~/about */
     padding-right: 50px;
 }
 
@@ -984,7 +984,7 @@ p.ls-command {
 @media (max-width: 900px) {
     .about-split-view {
         flex-direction: column;
-        gap: 30px;
+        gap: 15px; /* Reduced from 30px to close the vertical gap on mobile */
         padding-right: 0;
         /* Reset right padding to center layout on mobile */
     }
@@ -993,6 +993,10 @@ p.ls-command {
     .about-image-column {
         max-width: 100%;
         flex: auto;
+    }
+
+    .about-image-column {
+        padding-top: 0; /* Remove top padding on mobile */
     }
 
     .about-bio-body {
