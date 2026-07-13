@@ -1,0 +1,409 @@
+/* ==========================================================================
+   📚 LIBRARY SECTION STYLING
+   ========================================================================== */
+
+#library {
+    margin-bottom: 80px;
+}
+
+/* Section intro blurb styling */
+p.section-intro {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 0.6em; /* Matches .about-bio-body p */
+    line-height: 1.7;
+    color: #e0e0e0;
+    margin-left: 50px; /* Aligns with .about-bio-body p */
+    margin-top: 25px; /* Added buffer under the ~/library heading */
+    margin-bottom: 25px;
+    max-width: 1000px; /* Expanded width */
+}
+
+@media (max-width: 600px) {
+    p.section-intro {
+        font-size: 0.95rem; /* Matches mobile bio */
+        margin-left: 10px;
+        margin-bottom: 20px;
+    }
+}
+
+/* Prompt Alignment for Library Section */
+#library .ls-command {
+    margin-left: 30px; /* Indent command 20px right of heading */
+}
+
+/* Terminal Tree Explorer Box */
+.terminal-tree-container {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.7em;
+    line-height: 1.8;
+    color: #cccccc;
+    margin-left: 50px; /* Indent tree content under the command */
+    margin-top: 0; /* Tightened the gap between the command and the file tree */
+    margin-bottom: 25px;
+}
+
+@media (max-width: 900px) {
+    .terminal-tree-container {
+        margin-left: 10px;
+    }
+}
+
+@media (max-width: 600px) {
+    .terminal-tree-container {
+        font-size: 0.85rem;
+        margin-left: 10px;
+    }
+}
+
+/* Tree Structure */
+.terminal-tree {
+    color: #666666; /* Color for ASCII branches */
+}
+
+.tree-line {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.tree-branch {
+    white-space: pre; /* Protects branch spacing from HTML formatting collapsing */
+    flex-shrink: 0;
+    color: #666666;
+}
+
+.dir-name {
+    color: #ffffff;
+    font-weight: normal; /* Removed bolding to match clean file tree look */
+}
+
+.file-link {
+    color: #a6c8f9;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    padding: 0 3px;
+    border-radius: 3px;
+}
+
+.file-link:hover {
+    color: #ffffff;
+    background-color: #223344;
+}
+
+.course-code {
+    color: #888888;
+    margin-left: 6px;
+}
+
+.fav-star {
+    color: #ffd700; /* Gold */
+    margin-left: 6px;
+    font-size: 0.95em;
+    text-shadow: 0 0 5px rgba(255, 215, 0, 0.3);
+}
+
+/* Explore Full Library Link */
+.explore-more-link {
+    margin-left: 20px;
+    margin-top: 25px;
+}
+
+.explore-more-link a {
+    color: #a6c8f9;
+    text-decoration: none;
+    font-size: 0.7em;
+    font-weight: normal;
+    transition: color 0.2s ease;
+}
+
+.explore-more-link a:hover {
+    color: #4b92f6;
+    text-decoration: underline;
+}
+
+@media (max-width: 600px) {
+    .explore-more-link {
+        margin-left: 10px;
+    }
+    .explore-more-link a {
+        font-size: 0.95rem;
+    }
+}
+
+/* ==========================================================================
+   🖥️ SPLIT-SCREEN MODAL OVERLAY
+   ========================================================================== */
+
+.library-modal {
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.75);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    z-index: 2000; /* Above navbar */
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    
+    /* Fade Transition for Backdrop */
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.library-modal.open {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+
+.library-modal-content {
+    background-color: #1a1a1a;
+    border: 1px solid #444444;
+    border-radius: 12px;
+    width: 100%;
+    max-width: 1200px;
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    box-shadow: 0 12px 36px rgba(0, 0, 0, 0.6);
+    
+    /* Slide & Fade Transition for Dialog Card */
+    transform: translateY(20px);
+    opacity: 0;
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease;
+}
+
+.library-modal.open .library-modal-content {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+/* Header */
+.library-modal-header {
+    background-color: #2b2b2b;
+    border-bottom: 1px solid #444444;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #ffffff;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+}
+
+.library-modal-header span:first-child {
+    font-size: 1.1rem;
+}
+
+.library-modal-close {
+    font-size: 1.8rem;
+    color: #aaaaaa;
+    cursor: pointer;
+    line-height: 1;
+    position: relative;
+    top: -2px; /* Optically center the times glyph vertically */
+    transition: color 0.2s ease;
+}
+
+.library-modal-close:hover {
+    color: #ffffff;
+}
+
+/* Split Body */
+.library-modal-body {
+    flex: 1;
+    display: flex;
+    overflow: hidden;
+}
+
+/* Left Pane (Davis's Review) */
+.modal-left-pane {
+    width: 35%;
+    background-color: #161616;
+    border-right: 1px solid #333333;
+    padding: 25px;
+    overflow-y: auto;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+.modal-left-pane h3 {
+    color: #ffffff;
+    font-size: 1rem;
+    font-weight: bold;
+    margin-top: 0;
+    margin-bottom: 12px;
+    border-bottom: 1px solid #333333;
+    padding-bottom: 5px;
+}
+
+.modal-left-pane h3:not(:first-of-type) {
+    margin-top: 25px;
+}
+
+.modal-left-pane p {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: #dddddd;
+    margin: 0;
+    white-space: pre-line;
+}
+
+.modal-left-pane ul {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: #dddddd;
+    margin: 0;
+    padding-left: 20px;
+}
+
+.modal-left-pane li {
+    margin-bottom: 6px;
+}
+
+.mobile-pdf-action {
+    display: none; /* Hidden on desktop */
+}
+
+/* Right Pane (PDF Viewer) */
+.modal-right-pane {
+    width: 65%;
+    display: flex;
+    flex-direction: column;
+    background-color: #0d0d0d;
+    position: relative;
+}
+
+.modal-right-pane iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    background-color: #1a1a1a;
+}
+
+.pdf-fallback-link {
+    position: absolute;
+    bottom: 15px;
+    right: 20px;
+    background-color: rgba(0, 0, 0, 0.8);
+    border: 1px solid #444444;
+    border-radius: 6px;
+    padding: 8px 15px;
+    z-index: 10;
+}
+
+.pdf-fallback-link a {
+    color: #a6c8f9;
+    text-decoration: none;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 0.8rem;
+    font-weight: bold;
+    transition: color 0.2s ease;
+}
+
+.pdf-fallback-link a:hover {
+    color: #4b92f6;
+    text-decoration: none;
+}
+
+/* ==========================================================================
+   📱 MODAL RESPONSIVE COLLAPSE
+   ========================================================================== */
+
+@media (max-width: 900px) {
+    .library-modal-content {
+        height: 90vh;
+    }
+
+    .library-modal-body {
+        flex-direction: column;
+        overflow-y: auto;
+    }
+
+    .modal-left-pane {
+        width: 100%;
+        border-right: none;
+        border-bottom: 1px solid #333333;
+        overflow-y: visible;
+        padding: 20px;
+    }
+
+    .modal-right-pane {
+        width: 100%;
+        height: 400px;
+        min-height: 350px;
+        flex: auto;
+    }
+
+    .pdf-fallback-link {
+        bottom: 10px;
+        right: 10px;
+        padding: 6px 12px;
+    }
+}
+
+@media (max-width: 600px) {
+    .library-modal {
+        padding: 15px;
+    }
+
+    .library-modal-content {
+        height: auto;
+        max-height: 85vh; /* Card collapses to fit text content, leaving blurred space around it */
+        border-radius: 8px;
+    }
+
+    /* Hide right pane completely on mobile */
+    .modal-right-pane {
+        display: none;
+    }
+
+    .mobile-pdf-action {
+        display: flex;
+        flex-direction: column;
+        margin-top: 25px;
+        border-top: 1px solid #333333;
+        padding-top: 20px;
+        width: 100%;
+    }
+
+    .mobile-pdf-help {
+        font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        font-size: 0.8rem;
+        color: #888888;
+        margin-bottom: 12px;
+        text-align: center;
+        line-height: 1.4;
+    }
+
+    .mobile-pdf-button {
+        display: block;
+        width: 100%;
+        text-align: center;
+        background-color: #223344;
+        border: 1px solid #4b92f6;
+        border-radius: 6px;
+        padding: 12px;
+        color: #ffffff !important;
+        text-decoration: none !important;
+        font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        font-size: 0.95rem;
+        font-weight: bold;
+        transition: background-color 0.2s ease;
+        box-sizing: border-box;
+        cursor: pointer;
+    }
+
+    .mobile-pdf-button:hover,
+    .mobile-pdf-button:active {
+        background-color: #334466;
+    }
+}

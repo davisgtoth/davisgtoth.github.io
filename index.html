@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/title.css">
     <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/library.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 
@@ -24,6 +25,7 @@
         </label>
         <div class="nav-right">
             <a href="#about">about</a>
+            <a href="#library">library</a>
             <div class="dropdown">
                 <a href="#projects">projects</a>
                 <div class="dropdown-content">
@@ -142,7 +144,62 @@
                     <img src="assets/about/worlds.png" class="about-hobby" alt="Worlds Picture">
                 </div>
             </div>
+        </div>
+    </section>
 
+    <section class="content-section" id="library">
+        <h2>~/library</h2>
+        <p class="section-intro">
+            Welcome to my reference library! 📚 Throughout my time at UBC I've found I learn best by handwriting my own
+            notes that comprehensively summarize an entire course. ✍️ These notes have been invaluable for my studies so
+            I'm open sourcing my personal archive for anyone who might find them useful. Below is a curated selection of
+            my personal favorites and curriculum highlights. Click on any note sheet to view it directly, or explore the
+            <a href="https://davisgtoth.github.io/DavisLibrary" target="_blank">full reference library database of 30+
+                courses here</a> . 🔍
+        </p>
+
+        <p class="ls-command">> tree</p>
+        <div class="terminal-tree-container">
+            <div class="terminal-tree">
+                <div class="tree-line"><span class="tree-branch">├── </span><span class="dir-name">cpen_elec/</span>
+                </div>
+                <div class="tree-line"><span class="tree-branch">│ ├── </span><span class="file-link"
+                        data-course="cpen312">digital_logic.pdf</span> <span class="course-code">(CPEN 312)</span></div>
+                <div class="tree-line"><span class="tree-branch">│ ├── </span><span class="file-link"
+                        data-course="elec221">signals_&amp;_systems.pdf</span> <span class="course-code">(ELEC
+                        221)</span></div>
+                <div class="tree-line"><span class="tree-branch">│ ├── </span><span class="file-link"
+                        data-course="elec341">systems_&amp;_control.pdf</span> <span class="course-code">(ELEC
+                        341)</span>
+                </div>
+                <div class="tree-line"><span class="tree-branch">│ └── </span><span class="file-link"
+                        data-course="elec431">communication_systems.pdf</span> <span class="course-code">(ELEC
+                        431)</span></div>
+                <div class="tree-line"><span class="tree-branch">├── </span><span class="dir-name">math/</span></div>
+                <div class="tree-line"><span class="tree-branch">│ ├── </span><span class="file-link"
+                        data-course="math307">applied_linear_algebra.pdf</span> <span class="course-code">(MATH
+                        307)</span>
+                </div>
+                <div class="tree-line"><span class="tree-branch">│ ├── </span><span class="file-link"
+                        data-course="math318">probability_&amp;_statistics.pdf</span> <span class="course-code">(MATH
+                        318)</span></div>
+                <div class="tree-line"><span class="tree-branch">│ └── </span><span class="file-link"
+                        data-course="math400">applied_PDEs.pdf</span> <span class="course-code">(MATH
+                        400)</span></div>
+                <div class="tree-line"><span class="tree-branch">└── </span><span class="dir-name">phys/</span></div>
+                <div class="tree-line"><span class="tree-branch"> ├── </span><span class="file-link"
+                        data-course="phys350">classical_mechanics.pdf</span> <span class="course-code">(PHYS 350)</span>
+                </div>
+                <div class="tree-line"><span class="tree-branch"> ├── </span><span class="file-link"
+                        data-course="phys304">quantum_mechanics.pdf</span> <span class="course-code">(PHYS 304)</span>
+                </div>
+                <div class="tree-line"><span class="tree-branch"> ├── </span><span class="file-link"
+                        data-course="phys408">optics.pdf</span> <span class="course-code">(PHYS 408)</span></div>
+                <div class="tree-line"><span class="tree-branch"> └── </span><span class="file-link"
+                        data-course="phys407">general_relativity.pdf</span> <span class="course-code">(PHYS 407)</span>
+                    <span class="fav-star">★</span>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -168,9 +225,42 @@
         </div>
     </footer>
 
+    <!-- Library Modal Viewer -->
+    <div id="libraryModal" class="library-modal">
+        <div class="library-modal-content">
+            <div class="library-modal-header">
+                <span id="modalCourseTitle">PHYS 350: Classical Mechanics</span>
+                <span class="library-modal-close" id="modalCloseBtn">&times;</span>
+            </div>
+            <div class="library-modal-body">
+                <div class="modal-left-pane">
+                    <h3 id="modalReviewHeader">Davis's Review</h3>
+                    <p id="modalReviewText">I loved learning about Lagrangian dynamics...</p>
+
+                    <h3>Key Focus Areas</h3>
+                    <ul id="modalFocusList">
+                        <li>Generalized coordinates</li>
+                    </ul>
+
+                    <div class="mobile-pdf-action">
+                        <span class="mobile-pdf-help">PDF preview is unavailable on mobile devices.</span>
+                        <a id="modalMobilePdfLink" class="mobile-pdf-button" href="" target="_blank">Open PDF</a>
+                    </div>
+                </div>
+                <div class="modal-right-pane">
+                    <iframe id="modalPdfFrame" src="" frameborder="0"></iframe>
+                    <div class="pdf-fallback-link">
+                        <a id="modalPdfLink" href="" target="_blank">Open PDF in new tab ↗</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <script src="javascript/title.js"></script>
     <script src="javascript/scroll.js"></script>
     <script src="javascript/project-preview.js"></script>
+    <script src="javascript/library.js"></script>
 </body>
 
 </html>

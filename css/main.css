@@ -19,7 +19,8 @@ html {
 }
 
 #projects,
-#about {
+#about,
+#library {
     scroll-margin-top: 70px;
 }
 
