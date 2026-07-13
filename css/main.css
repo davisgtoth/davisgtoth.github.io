@@ -837,7 +837,7 @@ p.ls-command {
 }
 
 .preview-header {
-    background-color: #333;
+    background-color: #2b2b2b; /* Match library modal header */
     color: #fff;
     padding: 5px 10px;
     font-size: 0.6em;
