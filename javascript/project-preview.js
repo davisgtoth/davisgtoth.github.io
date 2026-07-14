@@ -116,10 +116,25 @@ document.addEventListener("DOMContentLoaded", () => {
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting && !hasStarted) {
-                hasStarted = true;
-                updatePreview(currentIndex, true);
-                startAutoCycle();
-                observer.disconnect();
+                // If user is still at the top of the page (looking at the hero video),
+                // defer starting the slideshow until they actually scroll down
+                if (window.scrollY < 100) {
+                    const startOnScroll = () => {
+                        if (window.scrollY >= 100) {
+                            hasStarted = true;
+                            updatePreview(currentIndex, true);
+                            startAutoCycle();
+                            window.removeEventListener('scroll', startOnScroll);
+                            observer.disconnect();
+                        }
+                    };
+                    window.addEventListener('scroll', startOnScroll, { passive: true });
+                } else {
+                    hasStarted = true;
+                    updatePreview(currentIndex, true);
+                    startAutoCycle();
+                    observer.disconnect();
+                }
             }
         });
     }, { threshold: 0.8 });
