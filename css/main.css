@@ -86,11 +86,13 @@ body.landing-page .content-section.visible {
     }
 
     .content-section h2 {
-        font-size: 1.4em; /* Scaled down to balance with the 'cd' main title on mobile */
+        font-size: 1.8em; /* Bumped up to act as a better section spacer on mobile */
+        margin-left: 0; /* Left-align header on mobile */
     }
 
     .content-section h3 {
-        font-size: 1.2em; /* Scaled down proportionately */
+        font-size: 1.4em; /* Bumped up proportionately */
+        margin-left: 0; /* Left-align subheader on mobile */
     }
 
     .content-section p {
@@ -896,7 +898,16 @@ p.ls-command {
 
     .project-list {
         padding-left: 0;
-        /* Reset indentation if needed */
+        margin-bottom: 10px;
+    }
+
+    .project-list p.ls-command {
+        margin-bottom: 5px !important;
+        padding-bottom: 0 !important;
+    }
+
+    .project-list .project-item {
+        padding: 4px 8px; /* Tighter padding for a more compact vertical list on mobile */
     }
 }
 
@@ -926,6 +937,7 @@ p.ls-command {
     /* Space between text and pictures */
     width: 100%;
     margin-top: 5px; /* Reduced from 10px to tighten space below ~/about */
+    margin-bottom: 60px; /* Added to replicate vertical spacing between sections */
     padding-right: 50px;
 }
 

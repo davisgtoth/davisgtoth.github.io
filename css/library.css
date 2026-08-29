@@ -13,7 +13,7 @@ p.section-intro {
     line-height: 1.7;
     color: #e0e0e0;
     margin-left: 50px; /* Aligns with .about-bio-body p */
-    margin-top: 25px; /* Added buffer under the ~/library heading */
+    margin-top: 10px; /* Reduced buffer under the ~/library heading for consistency */
     margin-bottom: 25px;
     max-width: 1000px; /* Expanded width */
 }
@@ -83,13 +83,10 @@ p.section-intro {
     cursor: pointer;
     text-decoration: none;
     transition: all 0.2s ease;
-    padding: 0 3px;
-    border-radius: 3px;
 }
 
 .file-link:hover {
-    color: #ffffff;
-    background-color: #223344;
+    color: #4b92f6; /* Site's interactive blue hover color */
 }
 
 .course-code {
